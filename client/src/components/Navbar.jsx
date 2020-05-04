@@ -7,11 +7,22 @@ import {
   Button,
   Navbar,
 } from "react-bootstrap";
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import {logoutAction} from './Login/login.action'
 
-const NavbarComponent = () => {
+
+const NavbarComponent = (props) => {
+
+
+
+  const logout = () => {
+    props.logoutAction()
+  }
+
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">JSLearn</Navbar.Brand>
+      <Navbar.Brand href="/">JSLearn</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
@@ -21,21 +32,30 @@ const NavbarComponent = () => {
           </Form>
         </Nav>
         <Nav className="ml-auto">
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
+          {!props.loginResponse ? <Link to='/login'>Login</Link> :
+          <NavDropdown title={`Hi ${props.loginResponse.email}`} id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">
+              <Link to='/profile'>Profile</Link>
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
+            <NavDropdown.Item href="#action/3.2" onClick={logout}>
+              Logout
             </NavDropdown.Item>
-          </NavDropdown>
+          </NavDropdown> }
         </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
 };
 
-export default NavbarComponent;
+
+
+const mapStateToProps = (state) => ({
+  loginResponse: state.LoginReducer.isLoggedIn
+})
+
+
+const NavbarConnectedComponent = connect(mapStateToProps,{
+  logoutAction
+})(NavbarComponent)
+
+export default NavbarConnectedComponent;
