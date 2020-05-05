@@ -33,14 +33,25 @@ const NavbarComponent = (props) => {
         </Nav>
         <Nav className="ml-auto">
           {!props.loginResponse ? <Link to='/login'>Login</Link> :
+          <>
+          <NavDropdown title='My Courses' id="basic-nav-dropdown">
+          <NavDropdown.Item>
+            <Link to='/profile'>Profile</Link>
+          </NavDropdown.Item>
+          <NavDropdown.Item onClick={logout}>
+            Logout
+          </NavDropdown.Item>
+        </NavDropdown>
           <NavDropdown title={`Hi ${props.loginResponse.email}`} id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">
+            <NavDropdown.Item>
               <Link to='/profile'>Profile</Link>
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2" onClick={logout}>
+            <NavDropdown.Item onClick={logout}>
               Logout
             </NavDropdown.Item>
-          </NavDropdown> }
+          </NavDropdown> 
+          </>
+          }
         </Nav>
       </Navbar.Collapse>
     </Navbar>
