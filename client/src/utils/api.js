@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { BASE_URL,API_ENDPOINTS } from './environment';
+import { paramSerializer } from './commonUtil';
+import searchYoutube from 'youtube-api-v3-search';
+
 
 /**
  * @method registerUser
@@ -43,10 +46,41 @@ const getMyProfileData = (email) => {
     })
 }
 
+/** get youtube data videos */
 
+
+
+const getGithubRepositories = (searchKey) => {
+    const url = 'https://api.github.com/search/repositories'
+    const paramObj = {
+        q:searchKey,
+        sort:'stars',
+        order:'desc'
+    }
+    const baseUrl = paramSerializer(url,paramObj);
+    return axios.get(baseUrl)
+    .then(response => {
+        return response.data
+    })
+}
+
+
+const getYoutubeData = (searchQuery) => {
+    const options = {
+        q:searchQuery,
+        part:'snippet',
+        type:'video',
+        maxResults: 50,
+        order:'rating'
+      }
+    const YOUTUBE_KEY = '';
+    return searchYoutube(YOUTUBE_KEY,options);
+}
 
 export default {
     registerUser,
     loginUser,
-    getMyProfileData
+    getMyProfileData,
+    getGithubRepositories,
+    getYoutubeData
 }

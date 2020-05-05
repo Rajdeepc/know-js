@@ -1,0 +1,16 @@
+.category-bar {
+    background:#F7F8FA;
+    padding: 6px;
+    .nav-item {
+        margin-right: 5px;
+        .nav-item-pic-wrapper {
+            font-size: 13px;
+
+            img {
+                height: 18px;
+    vertical-align: text-top;
+    margin-right: 6px;
+            }
+        }
+    }
+}

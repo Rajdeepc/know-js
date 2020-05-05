@@ -9,8 +9,9 @@ import {
 } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import {logoutAction} from './Login/login.action'
-
+import {logoutAction} from '../Login/login.action'
+import CategoryBarConnectedComponent from '../CategoryBar/CategoryBar'
+import './navbar.scss';
 
 const NavbarComponent = (props) => {
 
@@ -21,8 +22,9 @@ const NavbarComponent = (props) => {
   }
 
   return (
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="/">JSLearn</Navbar.Brand>
+    <>
+    <Navbar expand="lg" className="navbar-js">
+      <Navbar.Brand href="/">JS For Everyone</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
@@ -55,6 +57,8 @@ const NavbarComponent = (props) => {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
+    <CategoryBarConnectedComponent />
+    </>
   );
 };
 

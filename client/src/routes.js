@@ -7,7 +7,7 @@ import Login from "./views/Login/Login.component";
 import Profile from "./views/Profile/Profile.component";
 import Error from "./views/Error/Error.component";
 const Routes = (props) => (
-  <main>
+  <>
      <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/login" component={Login}>
@@ -18,7 +18,7 @@ const Routes = (props) => (
         </Route>
         <Route component={Error} />
       </Switch>
-  </main>
+  </>
 )
 
 
