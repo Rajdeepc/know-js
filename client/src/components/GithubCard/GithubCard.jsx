@@ -1,29 +1,30 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import './githubcard.scss';
+import "./githubcard.scss";
+import { RiStarSLine } from "react-icons/ri";
+import { GoIssueOpened } from "react-icons/go";
 
-const GithubCard = ({item}) => {
-    console.log(item);
-    
+const GithubCard = ({ item }) => {
+  console.log(item);
+
   return (
-      <Card>
-        {/* <Card.Img variant="top" src={item.thumbnails.high.url} />  */}
-       <Card.Body>
-          <Card.Text>
-            {item.full_name}
-          </Card.Text>
-          <Card.Text>
-            {item.description}
-          </Card.Text>
-          <Card.Text>
-            No of stars: {item.stargazers_count}
-          </Card.Text>
-          <Card.Text>
-            No of watcher: {item.watchers_count}
-          </Card.Text>
-          <a href={item.html_url}>Go To</a>
-        </Card.Body>
-      </Card>
+    <Card className="githubCard">
+      <Card.Body>
+        <Card.Title>{item.full_name}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">
+          <Card.Link href={item.owner.html_url}>{item.owner.login}</Card.Link>
+        </Card.Subtitle>
+        <Card.Text className="desc">{item.description}</Card.Text>
+        <Card.Link href="#">
+          <RiStarSLine />
+          {item.stargazers_count}
+        </Card.Link>
+        <Card.Link href="#">
+          <GoIssueOpened />
+          {item.open_issues_count}
+        </Card.Link>
+      </Card.Body>
+    </Card>
   );
 };
 

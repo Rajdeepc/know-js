@@ -15,7 +15,7 @@ const store = createStore(
 
 store.subscribe(throttle(() => {
   saveState({
-    LoginReducer: store.getState().LoginReducer
+    AuthReducer: store.getState().AuthReducer
   });
 },1000 ));
 

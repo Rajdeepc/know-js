@@ -73,7 +73,7 @@ const getYoutubeData = (searchQuery) => {
         maxResults: 50,
         order:'rating'
       }
-    const YOUTUBE_KEY = '';
+    const YOUTUBE_KEY = 'AIzaSyBJs7IyU-WqimNE9_YPVy4EBW6iYbApio0';
     return searchYoutube(YOUTUBE_KEY,options);
 }
 

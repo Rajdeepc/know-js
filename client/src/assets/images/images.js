@@ -1,4 +1,4 @@
-const background = require('./dailyui.png');
+const background = require('./background.png');
 const banner = require('./banner.png');
 
 // icons

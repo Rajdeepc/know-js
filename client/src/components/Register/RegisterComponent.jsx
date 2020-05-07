@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { connect } from "react-redux";
-import { registerUserAction } from "./register.action";
+import { registerUserAction } from "../../views/Auth/auth.action";
 import toast from '../Toast/Toast';
-
+import { AiOutlineMail } from 'react-icons/ai';
+import { FiUser } from 'react-icons/fi'
+import { RiLockPasswordLine } from 'react-icons/ri'
+import './register.scss';
+import {Link} from 'react-router-dom'
 const RegisterComponent = (props) => {
   const [validated, setValidated] = useState(false);
   const [email, setEmail] = useState("");
@@ -14,7 +18,6 @@ const RegisterComponent = (props) => {
   useEffect(() => {
     if (props.registerResponse && props.registerResponse.success) {
       //TODO show toast and redirect user to login
-      toast('Registration Success')
       clearInputFields();
     }
   }, [props.registerResponse]);
@@ -24,7 +27,6 @@ const RegisterComponent = (props) => {
   useEffect(() => {
     if (props.registerResponse && props.registerResponse.error) {
       clearInputFields();
-      toast(props.registerResponse.error); //TODO
     }
   }, [props.registerResponse]);
 
@@ -63,16 +65,19 @@ const RegisterComponent = (props) => {
   };
 
   return (
-    <div>
+    <div className="register-component">
+      <h4>Register</h4>
+      <p>Already Registered? <Link to="">Sign In</Link></p>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+         
           <Form.Control
             type="email"
             placeholder="Enter email"
             required
             onChange={onEmailInputChange}
           />
+           <AiOutlineMail/>
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
@@ -82,26 +87,28 @@ const RegisterComponent = (props) => {
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group controlId="formBasicUserName">
-          <Form.Label>User Name</Form.Label>
+          
           <Form.Control
             type="text"
             placeholder="Enter UserName"
             required
             onChange={onNameInputChange}
           />
+          <FiUser/>
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           <Form.Control.Feedback type="invalid">
             Please provide a valid username.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+         
           <Form.Control
             type="password"
             placeholder="Password"
             required
             onChange={onPasswordInputChange}
           />
+           <RiLockPasswordLine/>
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           <Form.Control.Feedback type="invalid">
             Please provide a valid password.
@@ -119,7 +126,7 @@ const RegisterComponent = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  registerResponse: state.RegisterReducer.isRegistrationSuccess,
+  registerResponse: state.AuthReducer.isRegistrationSuccess,
 });
 
 const RegisterConnectedComponent = connect(mapStateToProps, {

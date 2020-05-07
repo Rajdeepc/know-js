@@ -1,17 +1,15 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import './videocard.scss';
 
 const VideoCard = ({item}) => {
   console.log(item)
   return (
-      <Card>
-        {/* <Card.Img variant="top" src={item.thumbnails.high.url} /> */}
+      <Card className="video-card">
+        <Card.Img variant="top" src={item.snippet.thumbnails.high.url} />
         <Card.Body>
           <Card.Text>
             {item.snippet.title}
-          </Card.Text>
-          <Card.Text>
-            {item.snippet.description}
           </Card.Text>
         </Card.Body>
       </Card>

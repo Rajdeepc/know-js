@@ -5,6 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+.scroll-container{
+  overflow-y: auto;
+  height:100vh
+}
+.scroll-container .navbar-js{
+  box-shadow: none;
 }
 
 code {

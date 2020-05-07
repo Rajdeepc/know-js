@@ -1,0 +1,31 @@
+.category-card{
+    .panel.panel-default {
+        border-color: #ddd;
+        margin-bottom: 21px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        position: relative;
+        box-shadow: none;
+        .panel-body {
+            padding: 15px;
+            .top-category--panel-content {
+                display: flex;
+                flex-direction: row;
+                .top-category--category {
+                    height: 32px;
+                    line-height: 32px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    flex: 1;
+                    color: #111;
+                    min-width: 1px;
+                    img{
+                        width:30px
+                    }
+                }
+            }
+        }
+    }
+}

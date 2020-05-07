@@ -25,13 +25,13 @@ router.post('/', async (req,res) => {
     // finding the user with email address
     let user = await User.findOne({email: req.body.email});
     if(!user){
-        return res.status(200).send({success: false, error: "User does not exist.Please register"})
+        return res.status(400).send({success: false, error: "User does not exist.Please register"})
     }
 
     //if found validate the credentials with mongodb
     const validPassword = await bcrypt.compare(req.body.password, user.password);
     if(!validPassword){
-        return res.status(200).send({success: false,error: 'Incorrect Email or Password'});
+        return res.status(400).send({success: false,error: 'Incorrect Email or Password'});
     }
     // generating a unique jwt token
     const token = jwt.sign({_id:user._id}, 'PrivateKey');

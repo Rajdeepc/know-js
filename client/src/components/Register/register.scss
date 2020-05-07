@@ -1,0 +1,27 @@
+.register-component {
+    h4{
+        margin-bottom: 20px;
+    }
+    .form-group {
+        position: relative;
+        margin-bottom: 30px;
+        input.form-control {
+            border: 0px;
+            border-bottom: 1px solid #7d7d7d;
+            border-radius: 0px;
+        }
+
+        svg {
+            position: absolute;
+            right: 0;
+            top: 12px;
+        }
+
+        
+    }
+    .btn {
+        border-radius: 32px;
+        margin-right: 15px;
+        padding: 6px 30px;
+    }
+}

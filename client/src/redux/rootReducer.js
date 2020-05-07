@@ -1,11 +1,9 @@
 import { combineReducers } from "redux";
-import RegisterReducer from "../components/Register/register.reducer";
-import LoginReducer from "../components/Login/login.reducer";
+import AuthReducer from "../views/Auth/auth.reducer";
 import CategorySelectorReducer from '../components/CategoryBar/category.reducer'
 
 const rootReducer =  combineReducers({
-    RegisterReducer,
-    LoginReducer,
+    AuthReducer,
     CategorySelectorReducer
 })
 

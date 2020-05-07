@@ -6,7 +6,9 @@ const paramSerializer = (baseEndPoint, paramObj) => {
   return finalURL;
 };
 
+const emailRegEx = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
 
 export {
-  paramSerializer
+  paramSerializer,
+  emailRegEx
 }

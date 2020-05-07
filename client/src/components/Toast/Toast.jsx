@@ -1,15 +1,14 @@
 import React from "react";
-import { Toast } from 'react-bootstrap';
+import { Alert } from 'react-bootstrap';
 
 const toast = (msg) => {
   return (
-    <div>
-      <Toast>
-        <Toast.Header>
-        </Toast.Header>
-        <Toast.Body>{msg}</Toast.Body>
-      </Toast>
-    </div>
+    <Alert variant="success">
+    <Alert.Heading>Hey, nice to see you</Alert.Heading>
+    <p>
+      msg
+    </p>
+  </Alert>
   );
 }
 
