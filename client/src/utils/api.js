@@ -2,6 +2,7 @@ import axios from 'axios';
 import { BASE_URL,API_ENDPOINTS } from './environment';
 import { paramSerializer } from './commonUtil';
 import searchYoutube from 'youtube-api-v3-search';
+import { GOOGLE_API_KEY } from '../config/config';
 
 
 /**
@@ -73,8 +74,7 @@ const getYoutubeData = (searchQuery) => {
         maxResults: 50,
         order:'rating'
       }
-    const YOUTUBE_KEY = 'AIzaSyBJs7IyU-WqimNE9_YPVy4EBW6iYbApio0';
-    return searchYoutube(YOUTUBE_KEY,options);
+    return searchYoutube(GOOGLE_API_KEY,options);
 }
 
 export default {
