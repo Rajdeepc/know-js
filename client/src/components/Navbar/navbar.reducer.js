@@ -2,7 +2,7 @@ import { GET_GITHUB_DATA_SUCCESS,
     GET_GITHUB_DATA_FAILURE, 
     GET_YOUTUBE_DATA_SUCCESS, 
     GET_YOUTUBE_DATA_FAILURE } 
-from './category.action.types'; 
+from './navbar.action.types'; 
 
 const INITIAL_STATE = {
     isGithubApiSuccess: false,
@@ -12,7 +12,7 @@ const INITIAL_STATE = {
 }
 
 
-const CategorySelectorReducer = (state = INITIAL_STATE, action) => {
+const NavbarReducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
         case GET_GITHUB_DATA_SUCCESS:
             return {
@@ -41,4 +41,4 @@ const CategorySelectorReducer = (state = INITIAL_STATE, action) => {
     }
 }
 
-export default CategorySelectorReducer
+export default NavbarReducer

@@ -13,18 +13,18 @@ export default function Sidebar() {
         <FaAlignLeft size={30} />
       </div>
       <div className="sidebar">
-        <ListGroup defaultActiveKey="#link1">
-          <ListGroup.Item action href="#link1">
+        <ListGroup defaultActiveKey="#/"> 
+          <ListGroup.Item action href="#/">
             <AiOutlineHome size={20}/>
           </ListGroup.Item>
-          <ListGroup.Item action href="#link2">
+          <ListGroup.Item action href="#videos">
             <FiVideo size={20}/>
           </ListGroup.Item>
-          <ListGroup.Item action >
+          <ListGroup.Item action href="#profile">
             <FiSettings size={20}/>
           </ListGroup.Item>
-          <ListGroup.Item action >
-            <RiTimerLine size={20}/>
+          <ListGroup.Item action href="#quiz">
+            <RiTimerLine size={20} />
           </ListGroup.Item>
         </ListGroup>
         

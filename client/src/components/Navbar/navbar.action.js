@@ -1,5 +1,5 @@
 import Service from '../../utils/api';
-import { GET_GITHUB_DATA_SUCCESS , GET_GITHUB_DATA_FAILURE, GET_YOUTUBE_DATA_SUCCESS, GET_YOUTUBE_DATA_FAILURE } from './category.action.types'; 
+import { GET_GITHUB_DATA_SUCCESS , GET_GITHUB_DATA_FAILURE, GET_YOUTUBE_DATA_SUCCESS, GET_YOUTUBE_DATA_FAILURE } from './navbar.action.types'; 
 
 
 const getSelectionData = (selectedItem) => async dispatch => {

@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import AuthReducer from "../views/Auth/auth.reducer";
-import CategorySelectorReducer from '../components/CategoryBar/category.reducer'
+import NavbarReducer from '../components/Navbar/navbar.reducer'
 
 const rootReducer =  combineReducers({
     AuthReducer,
-    CategorySelectorReducer
+    NavbarReducer
 })
 
 export default rootReducer

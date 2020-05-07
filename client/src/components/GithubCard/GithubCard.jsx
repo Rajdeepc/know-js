@@ -16,11 +16,11 @@ const GithubCard = ({ item }) => {
         </Card.Subtitle>
         <Card.Text className="desc">{item.description}</Card.Text>
         <Card.Link href="#">
-          <RiStarSLine />
+          <RiStarSLine size={20}/>
           {item.stargazers_count}
         </Card.Link>
         <Card.Link href="#">
-          <GoIssueOpened />
+          <GoIssueOpened size={20}/>
           {item.open_issues_count}
         </Card.Link>
       </Card.Body>

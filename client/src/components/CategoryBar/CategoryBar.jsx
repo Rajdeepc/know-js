@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Nav, Col, Row, Image } from "react-bootstrap";
-import { getSelectionData } from "./category.action";
+import { getSelectionData } from "../Navbar/navbar.action";
 import { connect } from "react-redux";
 import JSLinks from "../../utils/constants";
 import "./category.scss";

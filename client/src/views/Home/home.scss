@@ -7,12 +7,13 @@
             width: 100%;
         }
     }
-    button.btn.btn-primary {
+    .view-all{
         border-radius: 32px;
         background: transparent;
         color: #007bff;
         padding: 6px 24px;
         font-size: 12px;
+        margin-bottom: 20px;
     }
 
     .col {
@@ -20,6 +21,7 @@
             font-size: 16px;
             font-weight: bold;
             margin-bottom: 20px;
+            padding-top: 15px;
         }
     }
 }

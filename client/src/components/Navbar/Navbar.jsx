@@ -4,30 +4,34 @@ import {
   FormControl,
   Form,
   Nav,
+  InputGroup,
   Button,
   Navbar,
   Modal,
+  DropdownButton,
+  Dropdown
 } from "react-bootstrap";
+import JSLinks from "../../utils/constants";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { logoutAction ,clearAllErrors} from "../../views/Auth/auth.action";
+import { logoutAction, clearAllErrors } from "../../views/Auth/auth.action";
 import "./navbar.scss";
 import { BsSearch } from "react-icons/bs";
 import { FaRegUserCircle } from "react-icons/fa";
+import { FiLogIn } from "react-icons/fi";
 import { AiOutlineLogin, AiOutlineBell } from "react-icons/ai";
 import AuthConnectedComponent from "../../views/Auth/Auth.component";
-import toast from '../Toast/Toast';
-
-
+import {getSelectionData} from './navbar.action'
 
 const NavbarComponent = (props) => {
   const [show, setShow] = useState(false);
+  const [dropdownValue, setDropDownValue] = useState(JSLinks[0].core);
 
   const handleClose = () => setShow(false);
   const handleShow = () => {
-    props.clearAllErrors()
+    props.clearAllErrors();
     setShow(true);
-  }
+  };
 
   const logout = () => {
     props.logoutAction();
@@ -39,25 +43,48 @@ const NavbarComponent = (props) => {
     }
   }, [props.authResponseObj]);
 
+  useEffect(() => {
+    props.getSelectionData(JSLinks[0].value);
+  }, []);
+
+
+  const getDataFromYoutube = (selected) => {
+    setDropDownValue(selected.core)
+    props.getSelectionData(selected.value);
+  };
+
+
+
   return (
     <>
       <Navbar expand="lg" className="navbar-js">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Nav class="search-nav">
-          <Form inline>
+          <InputGroup>
             <FormControl
-              type="text"
               placeholder="Search courses.."
-              className="mr-sm-2"
+              aria-label="Search courses.."
+              aria-describedby="basic-addon2"
             />
             <BsSearch />
-          </Form>
+            <DropdownButton
+              as={InputGroup.Append}
+              variant="outline-secondary"
+              title={dropdownValue}
+              id="input-group-dropdown-2"
+            >
+              
+              {(JSLinks || []).map((item) => {
+                return (
+                  <Dropdown.Item onSelect={(eventKey, event) => getDataFromYoutube(item, event)}>{item.core}</Dropdown.Item>
+                );
+              })}
+            </DropdownButton>
+          </InputGroup>
         </Nav>
         <Nav className="ml-auto">
           {!props.authResponseObj.isLoggedIn ? (
-            <Button>
-              <AiOutlineLogin size={20} onClick={handleShow} />
-            </Button>
+            <FiLogIn size={20} onClick={handleShow} />
           ) : (
             <>
               <Nav.Item>
@@ -85,7 +112,10 @@ const NavbarComponent = (props) => {
         <Modal.Body>
           <AuthConnectedComponent />
           <div>
-            <strong>{props.authResponseObj.loginError && props.authResponseObj.loginError.error}</strong>
+            <strong>
+              {props.authResponseObj.loginError &&
+                props.authResponseObj.loginError.error}
+            </strong>
           </div>
         </Modal.Body>
       </Modal>
@@ -99,7 +129,8 @@ const mapStateToProps = (state) => ({
 
 const NavbarConnectedComponent = connect(mapStateToProps, {
   logoutAction,
-  clearAllErrors
+  clearAllErrors,
+  getSelectionData
 })(NavbarComponent);
 
 export default NavbarConnectedComponent;

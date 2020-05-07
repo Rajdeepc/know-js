@@ -20,17 +20,17 @@ const Home = (props) => {
   }
   return (
     <>
-      <Row>
+      {/* <Row>
         <Col>
         <CategoryBarConnectedComponent selection={getSelectedData}/>
         </Col>
-      </Row>
+      </Row> */}
       <Row>
         <Container>
           <div className="section">
             <Row>
               <Col><h4>Top {selectedTopic} Repositories</h4></Col>
-              <Col className="text-right"><Button variant="primary">View All</Button></Col>
+              <Col className="text-right"><Button variant="primary" className="view-all">View All</Button></Col>
             </Row>
             <Row>
               {(props.dataList.githubAPiData || []).slice(0,4).map((item) => {
@@ -45,7 +45,7 @@ const Home = (props) => {
           <div className="section">
           <Row>
             <Col> <h4>Top {selectedTopic} Youtube Videos</h4></Col>
-              <Col  className="text-right"><Button variant="primary">View All</Button></Col>
+              <Col  className="text-right"><Button variant="primary" className="view-all">View All</Button></Col>
               </Row>
             <Row>
               {(props.dataList.youtubeApiData || []).slice(0,4).map((item) => {
@@ -64,7 +64,7 @@ const Home = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  dataList: state.CategorySelectorReducer,
+  dataList: state.NavbarReducer,
 });
 
 const HomeConnectedComponent = connect(mapStateToProps)(Home);
