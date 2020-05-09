@@ -1,6 +1,12 @@
 import Service from '../../utils/api';
-import { GET_GITHUB_DATA_SUCCESS , GET_GITHUB_DATA_FAILURE, GET_YOUTUBE_DATA_SUCCESS, GET_YOUTUBE_DATA_FAILURE } from './navbar.action.types'; 
-
+import { GET_GITHUB_DATA_SUCCESS,
+    GET_GITHUB_DATA_FAILURE, 
+    GET_YOUTUBE_DATA_SUCCESS, 
+    GET_YOUTUBE_DATA_FAILURE,
+    GET_NPM_DATA_FAILURE,
+    GET_NPM_DATA_SUCCESS
+} 
+from './navbar.action.types'; 
 
 const getSelectionData = (selectedItem) => async dispatch => {
 
@@ -30,6 +36,21 @@ const getSelectionData = (selectedItem) => async dispatch => {
     } catch (e) {
         dispatch({
             type: GET_YOUTUBE_DATA_FAILURE,
+            payload: e
+        })
+    }
+
+    try {
+        const getNPmDataResponse = await Service.getnpmPackages(selectedItem)
+        if (getNPmDataResponse){
+            dispatch({
+                type: GET_NPM_DATA_SUCCESS,
+                payload: getNPmDataResponse
+            })
+        }
+    } catch (e) {
+        dispatch({
+            type: GET_NPM_DATA_FAILURE,
             payload: e
         })
     }

@@ -1,0 +1,40 @@
+.npm-card{
+    h5{
+        font-weight: bold;
+    }
+    p.card-text {
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -moz-line-clamp: 3;
+        -ms-line-clamp: 3;
+        -o-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        -ms-box-orient: vertical;
+        -o-box-orient: vertical;
+        box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        height: 56px;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .npm-tags{
+        overflow: auto;
+        .nav-item {
+            float: left;
+            background: #7d7d7d;
+            color: #fff;
+            margin-bottom: 10px;
+            border-radius: 32px;
+            margin-right: 6px;
+            a{
+                color: #fff;
+    padding: 4px 10px;
+    font-size: 10px;
+            }
+        }
+    }
+}

@@ -7,6 +7,7 @@ import './login.scss';
 import { FiUser } from 'react-icons/fi';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { emailRegEx } from '../../utils/commonUtil'
+import '../../views/Auth/auth.scss';
 
 const LoginComponent = (props) => {
   const [validated, setValidated] = useState(false);
@@ -50,9 +51,6 @@ const LoginComponent = (props) => {
   };
 
   return (
-    <div className="login-component">
-      <h4>Login</h4>
-      <p>Don't have an account? <Link to="">Create Your Account</Link></p>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
           
@@ -91,7 +89,6 @@ const LoginComponent = (props) => {
           Reset
         </Button>
       </Form>
-    </div>
   );
 };
 

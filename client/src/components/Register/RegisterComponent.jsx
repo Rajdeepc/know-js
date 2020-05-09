@@ -64,10 +64,7 @@ const RegisterComponent = (props) => {
     setPassword(event.target.value);
   };
 
-  return (
-    <div className="register-component">
-      <h4>Register</h4>
-      <p>Already Registered? <Link to="">Sign In</Link></p>
+  return (      
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
          
@@ -121,7 +118,6 @@ const RegisterComponent = (props) => {
           Reset
         </Button>
       </Form>
-    </div>
   );
 };
 

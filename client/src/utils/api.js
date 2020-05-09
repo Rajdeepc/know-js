@@ -77,10 +77,24 @@ const getYoutubeData = (searchQuery) => {
     return searchYoutube(GOOGLE_API_KEY,options);
 }
 
+const getnpmPackages = (searchQuery) => {
+    const url = 'https://api.npms.io/v2/search'
+    const paramObj = {
+        q:searchQuery,
+        size:50
+    }
+    const baseUrl = paramSerializer(url,paramObj);
+    return axios.get(baseUrl)
+    .then(response => {
+        return response.data
+    })
+}
+
 export default {
     registerUser,
     loginUser,
     getMyProfileData,
     getGithubRepositories,
-    getYoutubeData
+    getYoutubeData,
+    getnpmPackages
 }

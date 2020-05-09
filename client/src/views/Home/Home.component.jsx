@@ -4,10 +4,7 @@ import "./home.scss";
 import VideoCard from "../../components/VideoCard/VideoCard";
 import GithubCard from "../../components/GithubCard/GithubCard";
 import { connect } from "react-redux";
-import JSLinks from "../../utils/constants";
-import CategoryCard from "../../components/CategoryCard/CategoryCard";
-import { background } from "../../assets/images/images";
-import CategoryBarConnectedComponent from '../../components/CategoryBar/CategoryBar'
+import NPMCard from "../../components/NPMCard/NPMCard";
 
 const Home = (props) => {
   
@@ -20,11 +17,6 @@ const Home = (props) => {
   }
   return (
     <>
-      {/* <Row>
-        <Col>
-        <CategoryBarConnectedComponent selection={getSelectedData}/>
-        </Col>
-      </Row> */}
       <Row>
         <Container>
           <div className="section">
@@ -52,6 +44,21 @@ const Home = (props) => {
                 return (
                   <Col sm="3">
                     <VideoCard key={item.id} item={item} />
+                  </Col>
+                );
+              })}
+            </Row>
+          </div>
+          <div className="section">
+          <Row>
+            <Col> <h4>Top {selectedTopic} npm Packages</h4></Col>
+              <Col  className="text-right"><Button variant="primary" className="view-all">View All</Button></Col>
+              </Row>
+            <Row>
+              {(props.dataList.npmData || []).slice(0,4).map((item) => {
+                return (
+                  <Col sm="3">
+                    <NPMCard key={item.id} item={item} />
                   </Col>
                 );
               })}

@@ -9,7 +9,7 @@ import {
   Navbar,
   Modal,
   DropdownButton,
-  Dropdown
+  Dropdown,
 } from "react-bootstrap";
 import JSLinks from "../../utils/constants";
 import { Link } from "react-router-dom";
@@ -17,11 +17,11 @@ import { connect } from "react-redux";
 import { logoutAction, clearAllErrors } from "../../views/Auth/auth.action";
 import "./navbar.scss";
 import { BsSearch } from "react-icons/bs";
-import { FaRegUserCircle } from "react-icons/fa";
-import { FiLogIn } from "react-icons/fi";
+import { FaRegUserCircle, FaAlignLeft } from "react-icons/fa";
+import { FiLogIn, FiUser } from "react-icons/fi";
 import { AiOutlineLogin, AiOutlineBell } from "react-icons/ai";
 import AuthConnectedComponent from "../../views/Auth/Auth.component";
-import {getSelectionData} from './navbar.action'
+import { getSelectionData } from "./navbar.action";
 
 const NavbarComponent = (props) => {
   const [show, setShow] = useState(false);
@@ -47,19 +47,19 @@ const NavbarComponent = (props) => {
     props.getSelectionData(JSLinks[0].value);
   }, []);
 
-
   const getDataFromYoutube = (selected) => {
-    setDropDownValue(selected.core)
+    setDropDownValue(selected.core);
     props.getSelectionData(selected.value);
   };
-
-
 
   return (
     <>
       <Navbar expand="lg" className="navbar-js">
+        <Navbar.Brand href="#home">
+          <FaAlignLeft size={20} /> <span>JSForEveryone</span>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Nav class="search-nav">
+        <Nav class="search-nav ml-auto">
           <InputGroup>
             <FormControl
               placeholder="Search courses.."
@@ -73,10 +73,15 @@ const NavbarComponent = (props) => {
               title={dropdownValue}
               id="input-group-dropdown-2"
             >
-              
               {(JSLinks || []).map((item) => {
                 return (
-                  <Dropdown.Item onSelect={(eventKey, event) => getDataFromYoutube(item, event)}>{item.core}</Dropdown.Item>
+                  <Dropdown.Item
+                    onSelect={(eventKey, event) =>
+                      getDataFromYoutube(item, event)
+                    }
+                  >
+                    {item.core}
+                  </Dropdown.Item>
                 );
               })}
             </DropdownButton>
@@ -84,7 +89,7 @@ const NavbarComponent = (props) => {
         </Nav>
         <Nav className="ml-auto">
           {!props.authResponseObj.isLoggedIn ? (
-            <FiLogIn size={20} onClick={handleShow} />
+            <FiUser size={20} onClick={handleShow} />
           ) : (
             <>
               <Nav.Item>
@@ -130,7 +135,7 @@ const mapStateToProps = (state) => ({
 const NavbarConnectedComponent = connect(mapStateToProps, {
   logoutAction,
   clearAllErrors,
-  getSelectionData
+  getSelectionData,
 })(NavbarComponent);
 
 export default NavbarConnectedComponent;

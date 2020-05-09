@@ -1,9 +1,9 @@
 .category-card{
     .panel.panel-default {
-        border-color: #ddd;
+        border-color: #5E5780;
         margin-bottom: 21px;
         background-color: #fff;
-        border: 1px solid #ddd;
+        border: 1px solid #5E5780;
         border-radius: 2px;
         position: relative;
         box-shadow: none;
@@ -19,7 +19,6 @@
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     flex: 1;
-                    color: #111;
                     min-width: 1px;
                     img{
                         width:30px
