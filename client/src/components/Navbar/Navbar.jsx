@@ -20,6 +20,7 @@ import { BsSearch } from "react-icons/bs";
 import { FaRegUserCircle, FaAlignLeft } from "react-icons/fa";
 import { FiLogIn, FiUser } from "react-icons/fi";
 import { AiOutlineLogin, AiOutlineBell } from "react-icons/ai";
+import { DiJavascript } from "react-icons/di";
 import AuthConnectedComponent from "../../views/Auth/Auth.component";
 import { getSelectionData } from "./navbar.action";
 
@@ -56,7 +57,7 @@ const NavbarComponent = (props) => {
     <>
       <Navbar expand="lg" className="navbar-js">
         <Navbar.Brand href="#home">
-          <FaAlignLeft size={20} /> <span>JSForEveryone</span>
+          <FaAlignLeft size={20} /> <span><DiJavascript/>ForEveryone</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Nav class="search-nav ml-auto">

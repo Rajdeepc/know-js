@@ -12,6 +12,9 @@ body {
   height:100vh;
   background: #F9F9F9;
 }
+.scroll-wrapper-padding{
+  padding:0px 30px
+}
 .scroll-container .navbar-js{
   box-shadow: none;
 }

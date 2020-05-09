@@ -21,7 +21,9 @@ const App = ({ location }) => {
           </Col>
           <Col sm="10" className="scroll-container">
             <Suspense fallback={<div>Loading....</div>}>
+            <div className="scroll-wrapper-padding">
               <Routes />
+              </div>
             </Suspense>
           </Col>
         </Row>

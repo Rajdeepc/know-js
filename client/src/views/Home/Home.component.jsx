@@ -17,8 +17,6 @@ const Home = (props) => {
   }
   return (
     <>
-      <Row>
-        <Container>
           <div className="section">
             <Row>
               <Col><h4>Top {selectedTopic} Repositories</h4></Col>
@@ -64,8 +62,6 @@ const Home = (props) => {
               })}
             </Row>
           </div>
-        </Container>
-      </Row>
     </>
   );
 };

@@ -2,6 +2,8 @@
     height: 300px;
     margin-bottom: 20px;
     border-radius: 10px;
+    position: relative;
+
     p.card-text {
         display: block;
         display: -webkit-box;
@@ -23,8 +25,31 @@
         font-size: 15px;
         margin-bottom: 10px;
     }
-    .card-img-top{
+
+    .card-img-top {
         border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .card-video-wrapper:hover .hover {
+        display: block
+    }
+    .hover {
+        display: none;
+        height: 190px;
+        background: rgba(0, 0, 0, 0.8);
+        top: 0;
+        position: absolute;
+        width: 100%;
+        .hover-content{
+            position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #fff;
+    margin-top: -16px;
+    text-align: center;
+        }
     }
 }
+
