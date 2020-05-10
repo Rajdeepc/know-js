@@ -17,9 +17,6 @@ export default function Sidebar() {
           <ListGroup.Item action href="#videos">
             <FiVideo size={20}/> Videos
           </ListGroup.Item>
-          <ListGroup.Item action href="#profile">
-            <FiSettings size={20}/> My Profile
-          </ListGroup.Item>
           <ListGroup.Item action href="#quiz">
             <RiTimerLine size={20} /> Quiz
           </ListGroup.Item>

@@ -18,67 +18,67 @@ const JSLinks = [
     {
         id:1,
         core: 'Data Structures',
-        value:"data structures",
+        value:"data structures in programming tutorials",
         img:ds
     },
     {
         id:2,
         core: 'JavaScript',
-        value:"javascript",
+        value:"javascript tutorials",
         img:javascript
     },
     {
         id:3,
         core: 'React',
-        value:"react",
+        value:"react tutorials",
         img:react
     },
     {
         id:4,
         core: 'Redux',
-        value:"redux",
+        value:"redux tutorials",
         img:redux
     },
     {
         id:5,
         core: 'Vue',
-        value:"vue",
+        value:"vue js tutorials",
         img:vue
     },
     {
         id:6,
         core: 'Svelte',
-        value:"velte",
+        value:"svelte tutorials",
         img:svelte
     },
     {
         id:7,
         core: 'Angular',
-        value:"angular",
+        value:"angular tutorials",
         img:angular
     },
     {
         id:8,
         core: 'React Native',
-        value:"react native",
+        value:"react native tutorials",
         img:reactnative
     },
     {
         id:9,
         core: 'Flutter',
-        value:"flutter",
+        value:"flutter tutorials",
         img:flutter
     },
     {
         id:10,
         core: 'MongoDB',
-        value:"mongo",
+        value:"mongodb database tutorials",
         img:mongodb
     },
     {
         id:11,
         core: 'Node',
-        value:"nodejs",
+        value:"nodejs tutorials",
         img:nodejs
     }
 ]

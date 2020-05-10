@@ -49,7 +49,9 @@ const BASE_URL = getEnvironMentConfig(process.env.NODE_ENV || DEFAULT_ENV);
 const API_ENDPOINTS = {
   signup: "/users",
   signin: "/auth",
-  getProfile: "/getProfile"
+  profile: "/profile",
+  validateUser:'/validateUser',
+  updatePassword:'/updatePassword'
 };
 
 export { BASE_URL, API_ENDPOINTS };

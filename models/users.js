@@ -7,6 +7,15 @@ const mongoose = require('mongoose');
  */
 
  const User = mongoose.model('User', new mongoose.Schema({
+    image:{
+        data: Buffer, 
+        type: String,
+        required: false
+    },
+    lovedItems:{
+        type:Array,
+        required: false
+    },
      email:{
         type: String,
         required: true,
@@ -16,7 +25,7 @@ const mongoose = require('mongoose');
      },
      username:{
         type: String,
-        required: true,
+        required: false,
         minlength: 5,
         maxlength: 50
      },

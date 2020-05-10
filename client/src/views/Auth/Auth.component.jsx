@@ -22,7 +22,7 @@ const AuthComponent = (props) => {
 
   return (
     <div className="auth-wrapper">
-      {props.isLoggedIn || !loginState ? (
+      {!loginState ? (
         <div className="register-component">
           <h4>Register</h4>
           <p>
@@ -31,7 +31,7 @@ const AuthComponent = (props) => {
           <RegisterComponent/>
         </div>
       ) : (
-        <div class="login-component">
+        <div class="login-component"> 
           <h4>Login</h4>
           <p>
             Don't have an account? <a href="#" onClick={switchToRegister}>Create Account</a>

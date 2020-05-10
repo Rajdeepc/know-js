@@ -10,6 +10,7 @@ const GithubCard = ({ item }) => {
   return (
     <Card className="githubCard">
       <Card.Body>
+        <a href="#" target="_blank" href={item.html_url}>
         <Card.Title>{item.full_name}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">
           <Card.Link href={item.owner.html_url}>{item.owner.login}</Card.Link>
@@ -23,6 +24,7 @@ const GithubCard = ({ item }) => {
           <GoIssueOpened size={20}/>
           {item.open_issues_count}
         </Card.Link>
+        </a>
       </Card.Body>
     </Card>
   );

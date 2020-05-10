@@ -4,7 +4,12 @@
     border-radius: 10px;
     position: relative;
 
+    a:hover {
+        text-decoration: none;
+    }
+
     p.card-text {
+        color: #5E5780;
         display: block;
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -30,9 +35,11 @@
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
+
     .card-video-wrapper:hover .hover {
         display: block
     }
+
     .hover {
         display: none;
         height: 190px;
@@ -40,16 +47,17 @@
         top: 0;
         position: absolute;
         width: 100%;
-        .hover-content{
+
+        .hover-content {
             position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    color: #fff;
-    margin-top: -16px;
-    text-align: center;
+            top: 50%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            color: #fff;
+            margin-top: -16px;
+            text-align: center;
         }
     }
-}
 
+}

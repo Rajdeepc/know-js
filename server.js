@@ -15,7 +15,9 @@ const cors = require("cors");
 // routes
 const users = require('./routes/users');
 const auth = require('./routes/auth');
-//const profile = require('./routes/profile');
+const profile = require('./routes/profile');
+const validateUser = require('./routes/validateUser');
+const updatePassword = require('./routes/updatePassword');
 
 
 // middlewares
@@ -24,7 +26,9 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 app.use('/users', users);
 app.use('/auth', auth);
-//app.use('/getProfile', profile);
+app.use('/profile', profile);
+app.use('/validateUser', validateUser);
+app.use('/updatePassword', updatePassword);
 
 // Serve static files assets on heroku
 app.use(express.static(path.join(__dirname, 'client/build')));

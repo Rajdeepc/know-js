@@ -57,10 +57,14 @@ const NavbarComponent = (props) => {
     <>
       <Navbar expand="lg" className="navbar-js">
         <Navbar.Brand href="#home">
-          <FaAlignLeft size={20} /> <span><DiJavascript/>ForEveryone</span>
+          <FaAlignLeft size={20} />{" "}
+          <span>
+            <DiJavascript size={20} />
+            ForEveryone
+          </span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Nav class="search-nav ml-auto">
+        <Nav className="search-nav ml-auto">
           <InputGroup>
             <FormControl
               placeholder="Search courses.."
@@ -74,9 +78,10 @@ const NavbarComponent = (props) => {
               title={dropdownValue}
               id="input-group-dropdown-2"
             >
-              {(JSLinks || []).map((item) => {
+              {(JSLinks || []).map((item, index) => {
                 return (
                   <Dropdown.Item
+                    key={`index-${index}`}
                     onSelect={(eventKey, event) =>
                       getDataFromYoutube(item, event)
                     }
@@ -114,16 +119,20 @@ const NavbarComponent = (props) => {
         </Nav>
       </Navbar>
       {/* // login modal */}
-      <Modal show={show} onHide={handleClose} size="md">
+      <Modal show={show} onHide={handleClose} size="md" backdrop="static">
+        <Modal.Header closeButton>
+        </Modal.Header>
         <Modal.Body>
           <AuthConnectedComponent />
+        </Modal.Body>
+        <Modal.Footer>
           <div>
             <strong>
               {props.authResponseObj.loginError &&
                 props.authResponseObj.loginError.error}
             </strong>
           </div>
-        </Modal.Body>
+        </Modal.Footer>
       </Modal>
     </>
   );
