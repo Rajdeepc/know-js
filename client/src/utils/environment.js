@@ -51,7 +51,9 @@ const API_ENDPOINTS = {
   signin: "/auth",
   profile: "/profile",
   validateUser:'/validateUser',
-  updatePassword:'/updatePassword'
+  updatePassword:'/updatePassword',
+  savevideo:'/savevideo',
+  unsavevideo:'/unsavevideo'
 };
 
 export { BASE_URL, API_ENDPOINTS };

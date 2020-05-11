@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
     javascript,
     react,
@@ -12,6 +14,10 @@ import {
     reactnative,
     ds
 } from '../assets/images/images';
+import { AiOutlineHome } from "react-icons/ai";
+import { FiVideo, FiSettings } from "react-icons/fi";
+import { RiTimerLine } from "react-icons/ri";
+
 
 
 const JSLinks = [
@@ -84,5 +90,27 @@ const JSLinks = [
 ]
 
 
+const SidebarLinks = [
+    {
+        id:0,
+        title:'Home',
+        logo:  <AiOutlineHome size={20} /> ,
+        route:'#/'
+    },
+    {
+        id:1,
+        title:'Videos',
+        logo:  <FiVideo size={20} />,
+        route:'#videos'
+    },
+    {
+        id:2,
+        title:'Quiz',
+        logo: <RiTimerLine size={20} />,
+        route:'#quiz'
+    }
+]
 
-export default JSLinks
+
+
+export  { JSLinks,SidebarLinks}

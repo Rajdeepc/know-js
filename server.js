@@ -18,6 +18,7 @@ const auth = require('./routes/auth');
 const profile = require('./routes/profile');
 const validateUser = require('./routes/validateUser');
 const updatePassword = require('./routes/updatePassword');
+const saveVideo = require('./routes/saveVideo');
 
 
 // middlewares
@@ -29,6 +30,7 @@ app.use('/auth', auth);
 app.use('/profile', profile);
 app.use('/validateUser', validateUser);
 app.use('/updatePassword', updatePassword);
+app.use('/savevideo', saveVideo);
 
 // Serve static files assets on heroku
 app.use(express.static(path.join(__dirname, 'client/build')));

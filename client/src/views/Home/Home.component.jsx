@@ -5,7 +5,7 @@ import VideoCard from "../../components/VideoCard/VideoCard";
 import GithubCard from "../../components/GithubCard/GithubCard";
 import { connect } from "react-redux";
 import NPMCard from "../../components/NPMCard/NPMCard";
-
+import { Link } from 'react-router-dom';
 const Home = (props) => {
   const [selectedTopic, setSelectedTopic] = useState("");
 
@@ -47,9 +47,7 @@ const Home = (props) => {
                   <h4>Top {selectedTopic} Youtube Videos</h4>
                 </Col>
                 <Col className="text-right">
-                  <Button variant="primary" className="view-all">
-                    View All
-                  </Button>
+                View All
                 </Col>
               </Row>
               <Row>

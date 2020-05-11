@@ -11,7 +11,7 @@ import {
   DropdownButton,
   Dropdown,
 } from "react-bootstrap";
-import JSLinks from "../../utils/constants";
+import {JSLinks} from "../../utils/constants";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutAction, clearAllErrors } from "../../views/Auth/auth.action";

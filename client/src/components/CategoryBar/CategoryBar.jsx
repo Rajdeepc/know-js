@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Nav, Col, Row, Image } from "react-bootstrap";
 import { getSelectionData } from "../Navbar/navbar.action";
 import { connect } from "react-redux";
-import JSLinks from "../../utils/constants";
+import {JSLinks }from "../../utils/constants";
 import "./category.scss";
 
 const CategoryBar = (props) => {

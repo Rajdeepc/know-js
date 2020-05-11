@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
         type: String,
         required: false
     },
-    lovedItems:{
+    savedItems:{
         type:Array,
         required: false
     },

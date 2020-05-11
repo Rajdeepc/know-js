@@ -1,28 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
 import "./sidebar.scss";
-import { ListGroup } from 'react-bootstrap'
-import { AiOutlineHome } from "react-icons/ai";
-import { FiVideo,FiSettings } from "react-icons/fi";
-import { RiTimerLine } from "react-icons/ri";
+import { ListGroup } from "react-bootstrap";
+import { SidebarLinks } from '../../utils/constants';
 
-export default function Sidebar() {
+
+const Sidebar = () => {
+  const [activeId, setActiveId] = useState(0);
+
+  const setActiveClass = (item, event) => {
+    setActiveId(item.id);
+  }
+  
   return (
     <div className="sidebar-container">
       <div className="sidebar">
-        <ListGroup defaultActiveKey="#/"> 
-        
-          <ListGroup.Item action href="#/">
-            <AiOutlineHome size={20}/> Home
-          </ListGroup.Item>
-          <ListGroup.Item action href="#videos">
-            <FiVideo size={20}/> Videos
-          </ListGroup.Item>
-          <ListGroup.Item action href="#quiz">
-            <RiTimerLine size={20} /> Quiz
-          </ListGroup.Item>
+        <ListGroup defaultActiveKey="#/">
+          {(SidebarLinks || []).map((item) => {
+            return (
+              <a
+                href={item.route}
+                key={item.id}
+                className={item.id === activeId ? "list-group-item active" : "list-group-item"}
+                onClick={(event) => setActiveClass(item, event) }
+              >
+                {item.logo} {item.title}
+              </a>
+            );
+          })}
         </ListGroup>
-        
       </div>
     </div>
   );
 }
+
+
+export default Sidebar;

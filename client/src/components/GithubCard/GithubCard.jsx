@@ -5,7 +5,7 @@ import { RiStarSLine } from "react-icons/ri";
 import { GoIssueOpened } from "react-icons/go";
 
 const GithubCard = ({ item }) => {
-  console.log(item);
+ // console.log(item);
 
   return (
     <Card className="githubCard">

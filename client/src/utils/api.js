@@ -91,18 +91,6 @@ const getnpmPackages = (searchQuery) => {
 }
 
 
-const bookMarkItemsToProfile = (itemObj,email) => {
-    const url = BASE_URL + API_ENDPOINTS.profile;
-    const body = {
-        email:email,
-        lovedItems: itemObj.lovedItems
-    }
-    return axios.post(url,body)
-    .then(response => {
-        return response.data
-    })
-}
-
 const validateUserEmail = (email) => {
     const url = BASE_URL + API_ENDPOINTS.validateUser;
     const body = {
@@ -128,9 +116,33 @@ const updateUserPassword = (email,newPassword) => {
 }
 
 
+const saveVideoItems = (videoId,email) => {
+    const url = BASE_URL + API_ENDPOINTS.savevideo;
+    const body = {
+        email:email,
+        videoId: videoId
+    }
+    return axios.put(url,body)
+    .then(response => {
+        return response.data
+    })
+}
+
+const unsaveVideoItems = (itemId,email) => {
+    const url = BASE_URL + API_ENDPOINTS.unsavevideo;
+    const body = {
+        email:email,
+        videoId:itemId
+    }
+    return axios.post(url,body)
+    .then(response => {
+        return response.data
+    })
+}
 
 export default {
-    bookMarkItemsToProfile,
+    saveVideoItems,
+    unsaveVideoItems,
     registerUser,
     loginUser,
     getMyProfileData,
