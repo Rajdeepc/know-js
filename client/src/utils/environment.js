@@ -53,7 +53,8 @@ const API_ENDPOINTS = {
   validateUser:'/validateUser',
   updatePassword:'/updatePassword',
   savevideo:'/savevideo',
-  unsavevideo:'/unsavevideo'
+  unsavevideo:'/unsavevideo',
+  getuservideos:'/getuservideos'
 };
 
 export { BASE_URL, API_ENDPOINTS };

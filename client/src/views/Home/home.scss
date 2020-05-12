@@ -1,5 +1,9 @@
-.section{
+.homepage{
+    .section{
     margin-bottom: 50px;
+    .slick-slide > div{
+        width:95%;
+    }
     .img-section-banner{
         position: relative;
         height: 500px;
@@ -24,4 +28,5 @@
             padding-top: 15px;
         }
     }
+}
 }

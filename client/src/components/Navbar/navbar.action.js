@@ -3,8 +3,8 @@ import { GET_GITHUB_DATA_SUCCESS,
     GET_GITHUB_DATA_FAILURE, 
     GET_YOUTUBE_DATA_SUCCESS, 
     GET_YOUTUBE_DATA_FAILURE,
-    GET_NPM_DATA_FAILURE,
-    GET_NPM_DATA_SUCCESS
+    PROFILE_DATA_RECEIVED,
+    PROFILE_DATA_FAILED
 } 
 from './navbar.action.types'; 
 
@@ -39,21 +39,24 @@ const getSelectionData = (selectedItem) => async dispatch => {
             payload: e
         })
     }
+}
 
+
+const getProfileData = (email) => async dispatch => {
     try {
-        const getNPmDataResponse = await Service.getnpmPackages(selectedItem)
-        if (getNPmDataResponse){
+        const getProfileResponse = await Service.getMyProfileData(email)
+        if (getProfileResponse){
             dispatch({
-                type: GET_NPM_DATA_SUCCESS,
-                payload: getNPmDataResponse
+                type: PROFILE_DATA_RECEIVED,
+                payload: getProfileResponse
             })
         }
     } catch (e) {
         dispatch({
-            type: GET_NPM_DATA_FAILURE,
+            type: PROFILE_DATA_FAILED,
             payload: e
         })
     }
 }
 
-export { getSelectionData }
+export { getSelectionData,getProfileData }

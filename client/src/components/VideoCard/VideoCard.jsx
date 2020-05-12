@@ -3,9 +3,11 @@ import { Card, Row, Col, ButtonGroup, Modal, Button } from "react-bootstrap";
 import "./videocard.scss";
 import { MdPlayArrow } from "react-icons/md";
 import { FiSave } from "react-icons/fi";
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import VideoModalPlayer from "../VideoCardModalPlayer/VideoModalPlayer";
 import { saveVideoItemAction } from "../../views/VideoPage/video.action";
 import { connect } from "react-redux";
+import { IconContext } from "react-icons";
 
 const VideoCard = (props) => {
   const { item } = props;
@@ -18,10 +20,10 @@ const VideoCard = (props) => {
     setShow(true);
   };
 
-  const saveItem = (item,event) => {
+  const saveItem = (item, event) => {
     console.log(item);
     props.saveVideoItemAction(
-      item.etag,
+      item,
       props.loginReducer.loginResponse.email
     );
   };
@@ -30,6 +32,29 @@ const VideoCard = (props) => {
   return (
     <>
       <Card className="video-card">
+        <div className="favorite">
+          <p onClick={(event) => saveItem(item, event)} className="favorite-icon">
+            {(props.videoData || []).find(
+              (video) => video.etag === item.etag
+            ) ? (
+              <IconContext.Provider
+                value={{ color: "gold", className: "save" }}
+              >
+                <div>
+                  <AiFillStar size={30} />
+                </div>
+              </IconContext.Provider>
+            ) : (
+              <IconContext.Provider
+                value={{ color: "white", className: "saved" }}
+              >
+                <div>
+                  <AiOutlineStar size={30} />
+                </div>
+              </IconContext.Provider>
+            )}
+          </p>
+        </div>
         <a
           href="javascript:void(0)"
           onClick={(event) => handleShow(event)}
@@ -49,12 +74,6 @@ const VideoCard = (props) => {
             <Card.Text>{item.snippet.title}</Card.Text>
           </Card.Body>
         </a>
-        <Card.Footer className="text-muted">
-          <Button variant="warning" onClick={(event) => saveItem(item,event)}>
-            <FiSave size={20} />
-            { (props.videoSaveResponse.savedVideoItems || []).find(video => video === item.etag) ? 'Saved' : 'Save' }
-          </Button>
-        </Card.Footer>
       </Card>
 
       <Modal show={show} onHide={handleClose} size="lg">
@@ -68,7 +87,7 @@ const VideoCard = (props) => {
 
 const mapStateToProps = (state) => ({
   loginReducer: state.AuthReducer,
-  videoSaveResponse: state.VideoPageReducer
+  videoSaveResponse: state.VideoPageReducer,
 });
 
 const VideoPageComponent = connect(mapStateToProps, {

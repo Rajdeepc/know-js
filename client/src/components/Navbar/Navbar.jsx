@@ -22,7 +22,7 @@ import { FiLogIn, FiUser } from "react-icons/fi";
 import { AiOutlineLogin, AiOutlineBell } from "react-icons/ai";
 import { DiJavascript } from "react-icons/di";
 import AuthConnectedComponent from "../../views/Auth/Auth.component";
-import { getSelectionData } from "./navbar.action";
+import { getSelectionData ,getProfileData} from "./navbar.action";
 
 const NavbarComponent = (props) => {
   const [show, setShow] = useState(false);
@@ -41,16 +41,25 @@ const NavbarComponent = (props) => {
   useEffect(() => {
     if (props.authResponseObj && props.authResponseObj.isLoggedIn) {
       setShow(false);
+      props.getProfileData(props.authResponseObj.loginResponse.email)
     }
-  }, [props.authResponseObj]);
+  }, []);
 
   useEffect(() => {
+    console.log(JSLinks[0].value)
     props.getSelectionData(JSLinks[0].value);
   }, []);
 
+   useEffect(() => {
+     if(dropdownValue){
+      props.getSelectionData(dropdownValue);
+     }
+   },[dropdownValue]);
+
+
+
   const getDataFromYoutube = (selected) => {
     setDropDownValue(selected.core);
-    props.getSelectionData(selected.value);
   };
 
   return (
@@ -146,6 +155,7 @@ const NavbarConnectedComponent = connect(mapStateToProps, {
   logoutAction,
   clearAllErrors,
   getSelectionData,
+  getProfileData
 })(NavbarComponent);
 
 export default NavbarConnectedComponent;

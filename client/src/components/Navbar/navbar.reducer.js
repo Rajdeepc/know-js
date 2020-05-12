@@ -1,20 +1,20 @@
-import {
-  GET_GITHUB_DATA_SUCCESS,
-  GET_GITHUB_DATA_FAILURE,
-  GET_YOUTUBE_DATA_SUCCESS,
+import { GET_GITHUB_DATA_SUCCESS,
+  GET_GITHUB_DATA_FAILURE, 
+  GET_YOUTUBE_DATA_SUCCESS, 
   GET_YOUTUBE_DATA_FAILURE,
-  GET_NPM_DATA_FAILURE,
-  GET_NPM_DATA_SUCCESS,
-} from "./navbar.action.types";
+  PROFILE_DATA_RECEIVED,
+  PROFILE_DATA_FAILED
+} 
+from './navbar.action.types'; 
 
 const INITIAL_STATE = {
   isGithubApiSuccess: false,
   isYoutubeApiSuccess: false,
   githubAPiData: [],
   youtubeApiData: [],
-  isNpmDataSuccess: false,
-  npmData: [],
-  npmDataError: {},
+  isProfileApiSuccess: false,
+  profileData:[],
+  error:{}
 };
 
 const NavbarReducer = (state = INITIAL_STATE, action) => {
@@ -41,17 +41,17 @@ const NavbarReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isYoutubeApiSuccess: false,
       };
-    case GET_NPM_DATA_SUCCESS:
+    case PROFILE_DATA_RECEIVED:
       return {
         ...state,
-        isNpmDataSuccess: true,
-        npmData: action.payload.results
+        isProfileApiSuccess: true,
+        profileData: action.payload.profile
       };
-    case GET_NPM_DATA_FAILURE:
+    case PROFILE_DATA_FAILED:
       return {
         ...state,
-        isNpmDataSuccess: false,
-        npmDataError: action.payload,
+        isProfileApiSuccess: false,
+        error: action.payload
       };
     default:
       return state;

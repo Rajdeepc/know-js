@@ -1,21 +1,63 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Image, Button, Row, Col, Container } from "react-bootstrap";
 import "./home.scss";
 import VideoCard from "../../components/VideoCard/VideoCard";
 import GithubCard from "../../components/GithubCard/GithubCard";
 import { connect } from "react-redux";
 import NPMCard from "../../components/NPMCard/NPMCard";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import { getProfileData } from "../../components/Navbar/navbar.action";
+
+const settings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+};
 const Home = (props) => {
   const [selectedTopic, setSelectedTopic] = useState("");
+  const [userVideoList, setUserVideoList] = useState([]);
 
   const getSelectedData = (value) => {
     if (value) {
       setSelectedTopic(value);
     }
   };
+
+  /**
+   * get profile data on load
+   */
+  useEffect(() => {
+    if (props.authStatus.isLoggedIn && props.authStatus.loginResponse.email) {
+      props.getProfileData(props.authStatus.loginResponse.email);
+    }
+  }, []);
+
+  /**
+   * @method once page loads call profile data to get saved videos
+   */
+  useEffect(() => {
+    if (
+      props.dataList.profileData.savedItems &&
+      props.dataList.profileData.savedItems.length > 0
+    ) {
+      setUserVideoList(props.dataList.profileData.savedItems);
+    }
+  }, [props.dataList.profileData.savedItems]);
+
+  useEffect(() => {
+    if (
+      props.videoItems.savedVideoItems &&
+      props.videoItems.savedVideoItems.length > 0
+    ) {
+      setUserVideoList(props.videoItems.savedVideoItems);
+    }
+  }, [props.videoItems.savedVideoItems]);
+
   return (
-    <>
+    <div class="homepage">
       <div className="section">
         <Row>
           <Col>
@@ -27,15 +69,17 @@ const Home = (props) => {
             </Button>
           </Col>
         </Row>
-        <Row>
-          {(props.dataList.githubAPiData || []).slice(0, 4).map((item) => {
-            return (
-              <Col sm="3" key={item.id}>
-                <GithubCard item={item} />
-              </Col>
-            );
-          })}
-        </Row>
+        <div>
+          <Slider {...settings}>
+            {(props.dataList.githubAPiData || []).map((item) => {
+              return (
+                <div key={item.id} className="slick-card-item">
+                  <GithubCard item={item} />
+                </div>
+              );
+            })}
+          </Slider>
+        </div>
       </div>
       <div className="section">
         {props.dataList.youtubeApiData &&
@@ -46,31 +90,29 @@ const Home = (props) => {
                   {" "}
                   <h4>Top {selectedTopic} Youtube Videos</h4>
                 </Col>
-                <Col className="text-right">
-                View All
-                </Col>
+                <Col className="text-right">View All</Col>
               </Row>
-              <Row>
-                {(props.dataList.youtubeApiData || [])
-                  .slice(0, 4)
-                  .map((item, index) => {
+              <div>
+                <Slider {...settings}>
+                  {(props.dataList.youtubeApiData || []).map((item, index) => {
                     return (
-                      <Col sm="3" key={`index-${index}`}>
-                        <VideoCard item={item} />
-                      </Col>
+                      <div class="slick-card-item" key={`index-${index}`}>
+                        <VideoCard item={item} videoData={userVideoList}/>
+                      </div>
                     );
                   })}
-              </Row>
+                </Slider>
+              </div>
             </>
           )}
       </div>
       <div className="section">
-        {props.dataList.npmData && props.dataList.npmData.length > 0 && (
+        {userVideoList && userVideoList.length > 0 && (
           <>
             <Row>
               <Col>
                 {" "}
-                <h4>Top {selectedTopic} npm Packages</h4>
+                <h4>Your Saved Videos</h4>
               </Col>
               <Col className="text-right">
                 <Button variant="primary" className="view-all">
@@ -78,42 +120,33 @@ const Home = (props) => {
                 </Button>
               </Col>
             </Row>
-            <Row>
-              {(props.dataList.npmData || []).slice(0, 4).map((item, index) => {
-                return (
-                  <Col sm="3" key={`index-${index}`}>
-                    <NPMCard item={item} />
-                  </Col>
-                );
-              })}
-            </Row>
+            <div>
+              <Slider {...settings}>
+                {(userVideoList || []).map((item, index) => {
+                  return (
+                    <div key={`index-${index}`}>
+                      <VideoCard item={item} videoData={userVideoList}/>
+                    </div>
+                  );
+                })}
+              </Slider>
+            </div>
           </>
         )}
       </div>
-      <div className="section">
-        <Row>
-          <Col>
-            {" "}
-            <h4>Top Viewed Courses</h4>
-          </Col>
-        </Row>
-      </div>
-      <div className="section">
-        <Row>
-          <Col>
-            {" "}
-            <h4>Your Saved Courses</h4>
-          </Col>
-        </Row>
-      </div>
-    </>
+    </div>
   );
 };
 
 const mapStateToProps = (state) => ({
   dataList: state.NavbarReducer,
+  authStatus: state.AuthReducer,
+  videoItems: state.VideoPageReducer,
+  homePageItems: state.HomePageReducer,
 });
 
-const HomeConnectedComponent = connect(mapStateToProps)(Home);
+const HomeConnectedComponent = connect(mapStateToProps, {
+  getProfileData,
+})(Home);
 
 export default HomeConnectedComponent;

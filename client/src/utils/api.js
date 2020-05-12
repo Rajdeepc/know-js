@@ -40,8 +40,11 @@ const loginUser = (obj) => {
 
 
 const getMyProfileData = (email) => {
-    const url = BASE_URL + API_ENDPOINTS.getProfile + "/" + email;
-    return axios.get(url)
+    const url = BASE_URL + API_ENDPOINTS.profile;
+    const body = {
+        email
+    }
+    return axios.post(url,body)
     .then(response => {
         return response.data
     })
@@ -128,21 +131,17 @@ const saveVideoItems = (videoId,email) => {
     })
 }
 
-const unsaveVideoItems = (itemId,email) => {
-    const url = BASE_URL + API_ENDPOINTS.unsavevideo;
-    const body = {
-        email:email,
-        videoId:itemId
-    }
-    return axios.post(url,body)
+const getUserVideoItems = (email) => {
+    const url = BASE_URL + API_ENDPOINTS.getuservideos + '/' + email;
+    return axios.get(url)
     .then(response => {
         return response.data
     })
 }
 
 export default {
+    getUserVideoItems,
     saveVideoItems,
-    unsaveVideoItems,
     registerUser,
     loginUser,
     getMyProfileData,

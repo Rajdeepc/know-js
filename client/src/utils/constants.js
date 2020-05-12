@@ -17,6 +17,8 @@ import {
 import { AiOutlineHome } from "react-icons/ai";
 import { FiVideo, FiSettings } from "react-icons/fi";
 import { RiTimerLine } from "react-icons/ri";
+import { DiHackernews } from "react-icons/di";
+import { FaPodcast,FaRegLightbulb,FaUserCheck } from "react-icons/fa";
 
 
 
@@ -99,15 +101,39 @@ const SidebarLinks = [
     },
     {
         id:1,
-        title:'Videos',
+        title:'Video Tutorials',
         logo:  <FiVideo size={20} />,
         route:'#videos'
     },
     {
-        id:2,
-        title:'Quiz',
-        logo: <RiTimerLine size={20} />,
+        id: 2,
+        title:'Latest News',
+        logo:  <DiHackernews size={20} />,
+        route:'#news'
+    },
+    {
+        id: 3,
+        title:'Podcasts',
+        logo:  <FaPodcast size={20} />,
+        route:'#podcasts'
+    },
+    {
+        id:4,
+        title:'Assesments',
+        logo: <FaRegLightbulb size={20} />,
         route:'#quiz'
+    },
+    {
+        id:5,
+        title:'Profile',
+        logo: <FaUserCheck size={20} />,
+        route:'#profile'
+    },
+    {
+        id:6,
+        title:'Settings',
+        logo: <FiSettings size={20} />,
+        route:'#settings'
     }
 ]
 

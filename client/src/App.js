@@ -9,7 +9,7 @@ import RightSidebar from "./components/RightSidebar/RightSidebar";
 const App = ({ location }) => {
   return (
     <>
-      <Container fluid>
+      <div>
         <Row>
           <Col>
             <NavbarComponent />
@@ -27,7 +27,7 @@ const App = ({ location }) => {
             </Suspense>
           </Col>
         </Row>
-      </Container>
+      </div>
     </>
   );
 };

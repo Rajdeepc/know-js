@@ -19,6 +19,7 @@ const profile = require('./routes/profile');
 const validateUser = require('./routes/validateUser');
 const updatePassword = require('./routes/updatePassword');
 const saveVideo = require('./routes/saveVideo');
+const getUserVideos = require('./routes/getSavedVideos');
 
 
 // middlewares
@@ -31,6 +32,7 @@ app.use('/profile', profile);
 app.use('/validateUser', validateUser);
 app.use('/updatePassword', updatePassword);
 app.use('/savevideo', saveVideo);
+app.use('/getuservideos', getUserVideos);
 
 // Serve static files assets on heroku
 app.use(express.static(path.join(__dirname, 'client/build')));
