@@ -13,9 +13,11 @@ const nodejs = require('./nodejs.svg');
 const mongodb = require('./mongodb.svg');
 const reactnative = require('./reactnative.svg');
 const ds = require('./datastr.png');
+const jslogo = require('./jslogo.png');
 
 
 export { 
+    jslogo,
     background,
     banner,
     javascript,

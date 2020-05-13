@@ -19,8 +19,6 @@ body {
   box-shadow: none;
 }
 .btn.btn-primary{
-  background:#5E5780;
-  border-color:#5E5780;
   padding: 6px 20px;
   border-radius: 32px;
 }
@@ -64,4 +62,9 @@ code {
   line-height: 1;
   opacity: .75;
   color: #5E5780;
+}
+.btn-warning,.btn-primary{
+  color: #212529;
+  background-color: #FFEB3B;
+  border-color: #FFEB3B;
 }

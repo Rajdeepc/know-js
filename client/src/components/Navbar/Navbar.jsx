@@ -10,6 +10,7 @@ import {
   Modal,
   DropdownButton,
   Dropdown,
+  Image
 } from "react-bootstrap";
 import {JSLinks} from "../../utils/constants";
 import { Link } from "react-router-dom";
@@ -23,7 +24,7 @@ import { AiOutlineLogin, AiOutlineBell } from "react-icons/ai";
 import { DiJavascript } from "react-icons/di";
 import AuthConnectedComponent from "../../views/Auth/Auth.component";
 import { getSelectionData ,getProfileData} from "./navbar.action";
-
+import { jslogo } from '../../assets/images/images'
 const NavbarComponent = (props) => {
   const [show, setShow] = useState(false);
   const [dropdownValue, setDropDownValue] = useState(JSLinks[0].core);
@@ -68,8 +69,7 @@ const NavbarComponent = (props) => {
         <Navbar.Brand href="#home">
           <FaAlignLeft size={20} />{" "}
           <span>
-            <DiJavascript size={20} />
-            ForEveryone
+            <span className="navbar-logo"><img src={jslogo} alt=""/></span><span>For Everyone</span>
           </span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -83,7 +83,7 @@ const NavbarComponent = (props) => {
             <BsSearch />
             <DropdownButton
               as={InputGroup.Append}
-              variant="outline-secondary"
+              variant="warning"
               title={dropdownValue}
               id="input-group-dropdown-2"
             >

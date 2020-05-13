@@ -10,11 +10,13 @@ const App = ({ location }) => {
   return (
     <>
       <div>
+        <Container fluid>
         <Row>
-          <Col>
+          <Col sm="12">
             <NavbarComponent />
           </Col>
         </Row>
+        </Container>
         <Row noGutters>
           <Col sm="2">
             <SideBar />

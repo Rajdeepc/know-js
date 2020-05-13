@@ -59,29 +59,6 @@ const Home = (props) => {
   return (
     <div class="homepage">
       <div className="section">
-        <Row>
-          <Col>
-            <h4>Top {selectedTopic} Repositories</h4>
-          </Col>
-          <Col className="text-right">
-            <Button variant="primary" className="view-all">
-              View All
-            </Button>
-          </Col>
-        </Row>
-        <div>
-          <Slider {...settings}>
-            {(props.dataList.githubAPiData || []).map((item) => {
-              return (
-                <div key={item.id} className="slick-card-item">
-                  <GithubCard item={item} />
-                </div>
-              );
-            })}
-          </Slider>
-        </div>
-      </div>
-      <div className="section">
         {props.dataList.youtubeApiData &&
           props.dataList.youtubeApiData.length > 0 && (
             <>
@@ -106,6 +83,30 @@ const Home = (props) => {
             </>
           )}
       </div>
+      <div className="section">
+        <Row>
+          <Col>
+            <h4>Top {selectedTopic} Repositories</h4>
+          </Col>
+          <Col className="text-right">
+            <Button variant="primary" className="view-all">
+              View All
+            </Button>
+          </Col>
+        </Row>
+        <div>
+          <Slider {...settings}>
+            {(props.dataList.githubAPiData || []).map((item) => {
+              return (
+                <div key={item.id} className="slick-card-item">
+                  <GithubCard item={item} />
+                </div>
+              );
+            })}
+          </Slider>
+        </div>
+      </div>
+      
       <div className="section">
         {userVideoList && userVideoList.length > 0 && (
           <>

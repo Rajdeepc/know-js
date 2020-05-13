@@ -1,15 +1,31 @@
 .navbar-js {
     padding: 10px 0px;
+
     .navbar-brand {
-        color: rgba(0,0,0,.9);
-        padding: 0px 20px;
-        svg {
-           vertical-align: text-top;
+        color: rgba(0, 0, 0, .9);
+        padding: 0px;
+
+        .navbar-logo {
+            height: 30px;
+            width: 30px;
+            display: inline-block;
+            vertical-align: text-bottom;
+
+            img {
+                max-width: 100%;
+            }
         }
-      span {
+
+        svg {
+            vertical-align: text-top;
+        }
+
+        span {
             margin-left: 10px;
+            color: #7d7d7d;
         }
     }
+
     .navbar-nav .nav-item {
         margin-right: 10px;
 
@@ -31,11 +47,13 @@
             padding: 0px 38px;
             width: 100%;
         }
-        .input-group-append{
-            button{
-                width:150px
+
+        .input-group-append {
+            button {
+                width: 150px
             }
         }
+
         svg {
             position: absolute;
             left: 10px;
