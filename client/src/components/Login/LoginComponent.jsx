@@ -103,10 +103,10 @@ const LoginComponent = (props) => {
             </Col>
           </Row>
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="outline-primary" type="submit">
           Login
         </Button>
-        <Button variant="danger" type="reset">
+        <Button variant="outline-danger" type="reset">
           Reset
         </Button>
       </Form>

@@ -73,7 +73,7 @@ const ResetPasswordForm = (props) => {
             Please provide a valid email address.
           </Form.Control.Feedback>
         </Form.Group>
-        <Button variant="primary" type="submit" size="lg" block>
+        <Button variant="outline-primary" type="submit" size="lg" block>
           RESET
         </Button>
       </Form>

@@ -104,10 +104,10 @@ const RegisterComponent = (props) => {
           Please provide a valid password.
         </Form.Control.Feedback>
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="outline-primary" type="submit">
         Register
       </Button>
-      <Button variant="danger" type="reset">
+      <Button variant="outline-danger" type="reset">
         Reset
       </Button>
     </Form>
