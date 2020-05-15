@@ -5,7 +5,7 @@ import { GET_GITHUB_DATA_SUCCESS,
   PROFILE_DATA_RECEIVED,
   PROFILE_DATA_FAILED
 } 
-from './navbar.action.types'; 
+from './sidebar.action.types'; 
 
 const INITIAL_STATE = {
   isGithubApiSuccess: false,
@@ -17,7 +17,7 @@ const INITIAL_STATE = {
   error:{}
 };
 
-const NavbarReducer = (state = INITIAL_STATE, action) => {
+const CategoryDataReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case GET_GITHUB_DATA_SUCCESS:
       return {
@@ -58,4 +58,4 @@ const NavbarReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default NavbarReducer;
+export default CategoryDataReducer;

@@ -1,4 +1,4 @@
-import React ,{useState} from "react";
+import React ,{useState,useEffect} from "react";
 import PropTypes from "prop-types";
 import RegisterComponent from "../../components/Register/RegisterComponent";
 import LoginComponent from "../../components/Login/LoginComponent";
@@ -18,6 +18,8 @@ const AuthComponent = (props) => {
   const switchToRegister = () => {
     setLoginState(false)
   }
+
+
 
 
   return (

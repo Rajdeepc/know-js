@@ -20,7 +20,6 @@ body {
 }
 .btn.btn-primary{
   padding: 6px 20px;
-  border-radius: 32px;
 }
 .register-component a,.login-component a,.forgot-component a{
   font-size: 14px;
@@ -68,3 +67,6 @@ code {
   background-color: #FFEB3B;
   border-color: #FFEB3B;
 }
+.section .slick-slide > div {
+      width:95%;
+  }

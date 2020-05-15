@@ -8,9 +8,10 @@
     .sidebar {
         padding-top: 10px;
         background-color: #fff;
-        height: 100vh;
-        color:#5E5780;
-
+        height: calc(100vh - 60px);
+        color: #5E5780;
+        overflow-y: auto;
+        padding-bottom: 40px;
         .list-group {
             .list-group-item {
                 background-color: transparent;
@@ -18,17 +19,46 @@
                 border: 0px;
                 border-radius: 0px;
                 text-align: left;
-                margin-bottom: 15px;
+                font-size: 14px;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.05);
+                }
+
+                .img-category {
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    margin-right: 20px;
+                    vertical-align: text-bottom;
+
+                    img {
+                        max-width: 100%;
+                    }
+                }
 
                 &.active {
-                    background-color:#FFEB3B;
+                    background: rgba(0, 0, 0, 0.1);
                     color: #000;
                 }
-                svg{
+
+                svg {
                     vertical-align: text-bottom;
                     margin-right: 15px;
                 }
             }
+        }
+
+        .list-group {
+            &.categories {
+                .category-header{
+                    padding:4px 18px;
+                }
+            }
+            &.my-videos{
+               // border-top:1px solid rgba(0,0,0,0.05)
+            }
+           
         }
     }
 }

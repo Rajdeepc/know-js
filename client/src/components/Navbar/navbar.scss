@@ -26,6 +26,17 @@
         }
     }
 
+    .sign-in {
+        svg{
+            vertical-align: text-bottom;
+            margin-right: 6px;
+        }
+        .btn {
+            font-size: 14px;
+            border-radius: 0px;
+        }
+    }
+
     .navbar-nav .nav-item {
         margin-right: 10px;
 

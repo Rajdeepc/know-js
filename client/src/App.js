@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense,useState } from "react";
 import Routes from "./routes.js";
 import { Row, Col, Container } from "react-bootstrap";
 import NavbarComponent from "./components/Navbar/Navbar";
@@ -6,7 +6,8 @@ import { withRouter } from "react-router-dom";
 import SideBar from "./components/Sidebar/Sidebar";
 import RightSidebar from "./components/RightSidebar/RightSidebar";
 
-const App = ({ location }) => {
+const App = (props) => {
+
   return (
     <>
       <div>

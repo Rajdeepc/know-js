@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import NPMCard from "../../components/NPMCard/NPMCard";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import { getProfileData } from "../../components/Navbar/navbar.action";
+import { getProfileData } from "../../components/Sidebar/sidebar.action";
 
 const settings = {
   dots: false,
@@ -20,20 +20,6 @@ const Home = (props) => {
   const [selectedTopic, setSelectedTopic] = useState("");
   const [userVideoList, setUserVideoList] = useState([]);
 
-  const getSelectedData = (value) => {
-    if (value) {
-      setSelectedTopic(value);
-    }
-  };
-
-  /**
-   * get profile data on load
-   */
-  useEffect(() => {
-    if (props.authStatus.isLoggedIn && props.authStatus.loginResponse.email) {
-      props.getProfileData(props.authStatus.loginResponse.email);
-    }
-  }, []);
 
   /**
    * @method once page loads call profile data to get saved videos
@@ -58,7 +44,7 @@ const Home = (props) => {
 
   return (
     <div class="homepage">
-      <div className="section">
+      {/* <div className="section">
         {props.dataList.youtubeApiData &&
           props.dataList.youtubeApiData.length > 0 && (
             <>
@@ -82,8 +68,8 @@ const Home = (props) => {
               </div>
             </>
           )}
-      </div>
-      <div className="section">
+      </div> */}
+      {/* <div className="section">
         <Row>
           <Col>
             <h4>Top {selectedTopic} Repositories</h4>
@@ -105,7 +91,7 @@ const Home = (props) => {
             })}
           </Slider>
         </div>
-      </div>
+      </div> */}
       
       <div className="section">
         {userVideoList && userVideoList.length > 0 && (
@@ -140,7 +126,7 @@ const Home = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  dataList: state.NavbarReducer,
+  dataList: state.CategoryDataReducer,
   authStatus: state.AuthReducer,
   videoItems: state.VideoPageReducer,
   homePageItems: state.HomePageReducer,

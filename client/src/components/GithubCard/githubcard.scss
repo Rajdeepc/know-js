@@ -47,5 +47,9 @@
     a.card-link {
         font-size: 14px;
         color: #7d7d7d;
+        svg{
+            margin-right: 4px;
+            vertical-align: sub;
+        }
     }
 }

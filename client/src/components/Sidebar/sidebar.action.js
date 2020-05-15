@@ -6,7 +6,7 @@ import { GET_GITHUB_DATA_SUCCESS,
     PROFILE_DATA_RECEIVED,
     PROFILE_DATA_FAILED
 } 
-from './navbar.action.types'; 
+from './sidebar.action.types'; 
 
 const getSelectionData = (selectedItem) => async dispatch => {
 

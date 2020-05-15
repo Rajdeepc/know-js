@@ -20,120 +20,98 @@ import { RiTimerLine } from "react-icons/ri";
 import { DiHackernews } from "react-icons/di";
 import { FaPodcast,FaRegLightbulb,FaUserCheck } from "react-icons/fa";
 
-
+const isLoggedIn = JSON.parse(sessionStorage.getItem('state'))
+console.log(isLoggedIn)
 
 const JSLinks = [
     {
-        id:1,
+        id:'categrory1',
         core: 'Data Structures',
-        value:"data structures in programming tutorials",
-        img:ds
+        value:"data structures tutorials",
+        img:ds,
+        routeName:'datastructure'
     },
     {
-        id:2,
+        id:'categrory2',
         core: 'JavaScript',
         value:"javascript tutorials",
-        img:javascript
+        img:javascript,
+        routeName:'javascript'
     },
     {
-        id:3,
+        id:'categrory3',
         core: 'React',
         value:"react tutorials",
-        img:react
+        img:react,
+        routeName:'react'
     },
     {
-        id:4,
+        id:'categrory4',
         core: 'Redux',
         value:"redux tutorials",
-        img:redux
+        img:redux,
+        routeName:'redux'
     },
     {
-        id:5,
+        id:'categrory5',
         core: 'Vue',
         value:"vue js tutorials",
-        img:vue
+        img:vue,
+        routeName:'vue'
     },
     {
-        id:6,
+        id:'categrory6',
         core: 'Svelte',
         value:"svelte tutorials",
-        img:svelte
+        img:svelte,
+        routeName:'svelte'
     },
     {
-        id:7,
+        id:'categrory7',
         core: 'Angular',
         value:"angular tutorials",
-        img:angular
+        img:angular,
+        routeName:'angular'
     },
     {
-        id:8,
+        id:'categrory8',
         core: 'React Native',
         value:"react native tutorials",
-        img:reactnative
+        img:reactnative,
+        routeName:'reactnative'
     },
     {
-        id:9,
+        id:'categrory9',
         core: 'Flutter',
         value:"flutter tutorials",
-        img:flutter
+        img:flutter,
+        routeName:'flutter'
     },
     {
-        id:10,
+        id:'categrory10',
         core: 'MongoDB',
         value:"mongodb database tutorials",
-        img:mongodb
+        img:mongodb,
+        routeName:'mongodb'
     },
     {
-        id:11,
+        id:'categrory11',
         core: 'Node',
         value:"nodejs tutorials",
-        img:nodejs
+        img:nodejs,
+        routeName:'nodejs'
     }
 ]
 
 
 const SidebarLinks = [
     {
-        id:0,
-        title:'Home',
-        logo:  <AiOutlineHome size={20} /> ,
-        route:'#/'
-    },
-    {
-        id:1,
-        title:'Video Tutorials',
+        id:'sidebar1',
+        value:'saved_videos',
+        title:'My Saved Videos',
         logo:  <FiVideo size={20} />,
-        route:'#videos'
-    },
-    {
-        id: 2,
-        title:'Latest News',
-        logo:  <DiHackernews size={20} />,
-        route:'#news'
-    },
-    {
-        id: 3,
-        title:'Podcasts',
-        logo:  <FaPodcast size={20} />,
-        route:'#podcasts'
-    },
-    {
-        id:4,
-        title:'Assesments',
-        logo: <FaRegLightbulb size={20} />,
-        route:'#quiz'
-    },
-    {
-        id:5,
-        title:'Profile',
-        logo: <FaUserCheck size={20} />,
-        route:'#profile'
-    },
-    {
-        id:6,
-        title:'Settings',
-        logo: <FiSettings size={20} />,
-        route:'#settings'
+        route:'/videos',
+        isLogged: false
     }
 ]
 

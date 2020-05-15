@@ -1,7 +1,8 @@
-.npm-card{
-    h5{
+.npm-card {
+    h5 {
         font-weight: bold;
     }
+
     p.card-text {
         display: block;
         display: -webkit-box;
@@ -21,19 +22,21 @@
         font-size: 12px;
         margin-bottom: 10px;
     }
-    .npm-tags{
+
+    .npm-tags {
         overflow: auto;
+
         .nav-item {
             float: left;
             background: #7d7d7d;
             color: #fff;
             margin-bottom: 10px;
-            border-radius: 32px;
             margin-right: 6px;
-            a{
+
+            a {
                 color: #fff;
-    padding: 4px 10px;
-    font-size: 10px;
+                padding: 4px 10px;
+                font-size: 10px;
             }
         }
     }
