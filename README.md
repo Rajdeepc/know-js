@@ -3,7 +3,9 @@
 A handpicked encyclopedia to learn JavaScript and its frameowrks such as ReactJS, VueJS, Svelte, Ionic, React Native, NodeJS, MongoDB.
 The portal consists of all the frameworks and its related topics such as Videos, Blogs, PodCasts, Books, Links for the beginner as well as Advanced JS developers.
 
-### WIP
+### Few Glimpses
+
+![glimpse1](glimpse1.png)
 
 
 ### Built With
