@@ -17,7 +17,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutAction, clearAllErrors } from "../../views/Auth/auth.action";
 import "./navbar.scss";
-import { BsSearch } from "react-icons/bs";
 import { FaRegUserCircle, FaAlignLeft } from "react-icons/fa";
 import { FiLogIn, FiUser } from "react-icons/fi";
 import { AiOutlineLogin, AiOutlineBell } from "react-icons/ai";
@@ -25,6 +24,7 @@ import { DiJavascript } from "react-icons/di";
 import AuthConnectedComponent from "../../views/Auth/Auth.component";
 import { jslogo } from '../../assets/images/images';
 import { getProfileData } from "../../components/Sidebar/sidebar.action";
+import SearchBar from '../SearchBar/SearchBar';
 
 const NavbarComponent = (props) => {
   const [show, setShow] = useState(false);
@@ -53,21 +53,13 @@ const NavbarComponent = (props) => {
     <>
       <Navbar expand="lg" className="navbar-js">
         <Navbar.Brand href="#home">
-          <FaAlignLeft size={20} />{" "}
           <span>
             <span className="navbar-logo"><img src={jslogo} alt=""/></span><span>For Everyone</span>
           </span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Nav className="search-nav ml-auto">
-          <InputGroup>
-            <FormControl
-              placeholder="Search courses.."
-              aria-label="Search courses.."
-              aria-describedby="basic-addon2"
-            />
-            <BsSearch />
-          </InputGroup>
+          <SearchBar />
         </Nav>
         <Nav className="ml-auto sign-in">
           {!props.authResponseObj.isLoggedIn ? (
