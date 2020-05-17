@@ -17,18 +17,8 @@ const VideoModalPlayer = ({item}) => {
       <div className="video-info">
         <div className="video-title">
           <Row>
-            <Col sm="10">
+            <Col sm="12">
               <h4>{item.snippet.title}</h4>
-            </Col>
-            <Col sm="2" className="text-right">
-              <ButtonGroup aria-label="Basic example">
-                <Button variant="light">
-                  <BsBookmarks size={20} />
-                </Button>
-                <Button variant="light">
-                  <FiSave size={20} />
-                </Button>
-              </ButtonGroup>
             </Col>
           </Row>
 
