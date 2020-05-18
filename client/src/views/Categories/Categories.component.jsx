@@ -25,13 +25,13 @@ const Categories = (props) => {
   const [selectedTopic, setSelectedTopic] = useState("");
   const [userVideoList, setUserVideoList] = useState([]);
 
-  
+    console.log(props.filteredGitHubItems)
 
   return (
     <div className="categories-wrapper">
       <div className="section">
-        {props.dataList.youtubeApiData &&
-          props.dataList.youtubeApiData.length > 0 && (
+        {props.filteredYoutubeItems &&
+          props.filteredYoutubeItems.length > 0 && (
             <>
               <Row>
                 <Col>
@@ -41,7 +41,7 @@ const Categories = (props) => {
               </Row>
               <div>
                 <Slider {...settings}>
-                  {(props.dataList.youtubeApiData || []).map((item, index) => {
+                  {(props.filteredYoutubeItems || []).map((item, index) => {
                     return (
                       <div class="slick-card-item" key={`index-${index}`}>
                         <VideoCard item={item} videoData={userVideoList} />
@@ -54,6 +54,9 @@ const Categories = (props) => {
           )}
       </div>
       <div className="section">
+      {props.filteredGitHubItems &&
+          props.filteredGitHubItems.length > 0 && (
+            <>
         <Row>
           <Col>
             <h4><GoRepo size={30}/> Top {JSON.parse(localStorage.getItem('selected'))} Repositories</h4>
@@ -63,7 +66,7 @@ const Categories = (props) => {
         </Row>
         <div>
           <Slider {...settings}>
-            {(props.dataList.githubAPiData || []).map((item) => {
+            {(props.filteredGitHubItems || []).map((item) => {
               return (
                 <div key={item.id} className="slick-card-item">
                   <GithubCard item={item} />
@@ -72,15 +75,33 @@ const Categories = (props) => {
             })}
           </Slider>
         </div>
+        </>
+          )}
       </div>
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  dataList: state.CategoryDataReducer,
-  authStatus: state.AuthReducer,
-});
+// const mapStateToProps = (state) => ({
+//   dataList: state.CategoryDataReducer,
+//   authStatus: state.AuthReducer,
+// });
+
+
+const mapStateToProps = (state) => {
+  const { youtubeApiData = [], githubAPiData = [], searchText } = state.CategoryDataReducer;
+  const filteredYoutubeItems = (youtubeApiData || []).filter((item) => item.snippet.title.toLowerCase().includes(searchText.toLowerCase()));
+  const filteredGitHubItems = (githubAPiData || []).filter((item) => item.full_name.toLowerCase().includes(searchText.toLowerCase()));
+  console.log("filteredYoutubeItems" + filteredYoutubeItems.length);
+  console.log("filteredGitHubItems" + filteredGitHubItems.length)
+
+  return {
+      filteredYoutubeItems: filteredYoutubeItems || state.CategoryDataReducer.youtubeApiData,
+      filteredGitHubItems: filteredGitHubItems || state.CategoryDataReducer.githubAPiData,
+      authStatus: state.AuthReducer
+  };
+}
+
 
 const CategoriesComponent = connect(mapStateToProps, {
   getSelectionData,

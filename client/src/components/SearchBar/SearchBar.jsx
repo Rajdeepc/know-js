@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import { BsSearch } from "react-icons/bs";
 
 import { FormControl, Form, InputGroup } from "react-bootstrap";
-import { connect } from "mongoose";
+import { connect } from "react-redux";
 import { FiSearch } from "react-icons/fi";
-const SearchBar = () => {
-  const onEmailInputChange = () => {};
+import {searchAction} from '../../components/Sidebar/sidebar.action';
+import { useDebounce } from "use-debounce";
+
+
+const SearchBar = (props) => {
+
+  const [searchValue, setSearchValue] = useState('');
+
+  const debouncingInput = useDebounce(searchValue, 500);
+
+
+  useEffect(() => {
+    if(debouncingInput && searchValue){
+      // call action to re render UI based on Search value
+      props.searchAction(searchValue)
+    }
+  }, [debouncingInput])
+
+  const onSearchInputChange = (event) => {
+    setSearchValue(event.target.value);
+  };
 
   return (
     <Form noValidate>
@@ -13,7 +32,7 @@ const SearchBar = () => {
           type="email"
           placeholder="Search here.."
           required
-          onChange={onEmailInputChange}
+          onChange={onSearchInputChange}
         />
         <FiSearch />
     </Form>
@@ -22,5 +41,8 @@ const SearchBar = () => {
 
 const mapStateToProps = (state) => ({});
 
+const SearchBarComponent = connect(mapStateToProps,{
+  searchAction
+})(SearchBar)
 
-export default SearchBar;
+export default SearchBarComponent;

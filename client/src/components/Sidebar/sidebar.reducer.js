@@ -3,7 +3,8 @@ import { GET_GITHUB_DATA_SUCCESS,
   GET_YOUTUBE_DATA_SUCCESS, 
   GET_YOUTUBE_DATA_FAILURE,
   PROFILE_DATA_RECEIVED,
-  PROFILE_DATA_FAILED
+  PROFILE_DATA_FAILED,
+  SEARCH_TEXT
 } 
 from './sidebar.action.types'; 
 
@@ -14,7 +15,8 @@ const INITIAL_STATE = {
   youtubeApiData: [],
   isProfileApiSuccess: false,
   profileData:[],
-  error:{}
+  error:{},
+  searchText: ''
 };
 
 const CategoryDataReducer = (state = INITIAL_STATE, action) => {
@@ -53,6 +55,11 @@ const CategoryDataReducer = (state = INITIAL_STATE, action) => {
         isProfileApiSuccess: false,
         error: action.payload
       };
+      case SEARCH_TEXT:
+        return {
+          ...state,
+          searchText: action.text
+        };
     default:
       return state;
   }

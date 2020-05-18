@@ -8,7 +8,7 @@ const rootReducer =  combineReducers({
     AuthReducer,
     CategoryDataReducer,
     VideoPageReducer,
-    HomePageReducer
+    HomePageReducer,
 })
 
 export default rootReducer

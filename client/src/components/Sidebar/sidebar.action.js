@@ -4,7 +4,8 @@ import { GET_GITHUB_DATA_SUCCESS,
     GET_YOUTUBE_DATA_SUCCESS, 
     GET_YOUTUBE_DATA_FAILURE,
     PROFILE_DATA_RECEIVED,
-    PROFILE_DATA_FAILED
+    PROFILE_DATA_FAILED,
+    SEARCH_TEXT
 } 
 from './sidebar.action.types'; 
 
@@ -59,4 +60,11 @@ const getProfileData = (email) => async dispatch => {
     }
 }
 
-export { getSelectionData,getProfileData }
+const searchAction = (value) => dispatch => {
+    dispatch({
+        type: SEARCH_TEXT,
+        text: value
+    })
+}
+
+export { getSelectionData,getProfileData,searchAction }

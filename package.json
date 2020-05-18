@@ -33,6 +33,7 @@
     "mongoose": "^5.2.15",
     "react-slick": "^0.26.1",
     "shortid": "^2.2.15",
+    "use-debounce": "^3.4.2",
     "xoauth2": "^1.2.0"
   },
   "devDependencies": {
