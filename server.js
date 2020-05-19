@@ -40,7 +40,9 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 // MongoDB connection string
 const MONGO_LOCAL_URI = `mongodb://localhost:27017/alljs`;
-mongoose.connect(process.env.MONGOLAB_URI || MONGO_LOCAL_URI)
+const MONGO_CLOUD_URI = `mongodb://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@ds151124.mlab.com:51124/alljs`;
+
+mongoose.connect(process.env.MONGOLAB_URI || MONGO_CLOUD_URI)
 .then(() => console.log("New connection established"))
 .catch(err => console.log('Something went wrong' + err))
 
@@ -50,5 +52,5 @@ const port = process.env.PORT || 4000;
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
   });
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+app.listen(port, () => console.log(`App server running on port ${port}...`));
 

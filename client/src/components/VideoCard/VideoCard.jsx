@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Card, Row, Col, ButtonGroup, Modal, Button } from "react-bootstrap";
+import { Card, Modal } from "react-bootstrap";
 import "./videocard.scss";
 import { MdPlayArrow } from "react-icons/md";
-import { FiSave } from "react-icons/fi";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import VideoModalPlayer from "../VideoCardModalPlayer/VideoModalPlayer";
 import { saveVideoItemAction } from "../../views/VideoPage/video.action";

@@ -1,9 +1,8 @@
-import React ,{useState,useEffect} from "react";
+import React ,{useState} from "react";
 import PropTypes from "prop-types";
 import RegisterComponent from "../../components/Register/RegisterComponent";
 import LoginComponent from "../../components/Login/LoginComponent";
 import "./auth.scss";
-import { background } from "../../assets/images/images";
 import { connect } from "react-redux";
 
 const AuthComponent = (props) => {
@@ -24,15 +23,8 @@ const AuthComponent = (props) => {
 
   return (
     <div className="auth-wrapper">
-      {!loginState ? (
-        <div className="register-component">
-          <h4>Register</h4>
-          <p>
-            Already Registered? <a href="#" onClick={switchToLogin}>Sign In</a>
-          </p>
-          <RegisterComponent/>
-        </div>
-      ) : (
+      {loginState ? 
+      (
         <div class="login-component"> 
           <h4>Login</h4>
           <p>
@@ -40,7 +32,18 @@ const AuthComponent = (props) => {
           </p>
           <LoginComponent/>
         </div>
-      )}
+      )
+       : 
+       (
+        <div className="register-component">
+          <h4>Register</h4>
+          <p>
+            Already Registered? <a href="#" onClick={switchToLogin}>Sign In</a>
+          </p>
+          <RegisterComponent/>
+        </div>
+      )
+      }
     </div>
   );
 };

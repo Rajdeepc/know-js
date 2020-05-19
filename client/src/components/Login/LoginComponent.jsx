@@ -7,7 +7,6 @@ import "./login.scss";
 import { FiUser } from "react-icons/fi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdArrowBack } from "react-icons/md";
-import { emailRegEx } from "../../utils/commonUtil";
 import "../../views/Auth/auth.scss";
 import ResetPasswordForm from "../ResetPasswordForm/ResetPasswordForm";
 
@@ -17,7 +16,6 @@ const LoginComponent = (props) => {
   const [validated, setValidated] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showResetPasswordPanel, setShowResetPasswordPanel] = useState(false);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -67,7 +65,6 @@ const LoginComponent = (props) => {
     setPassword(event.target.value);
   };
 
-  const goBackToLogin = () => {};
 
   return (
     <>
@@ -87,7 +84,7 @@ const LoginComponent = (props) => {
         <Form.Group controlId="formBasicPassword">
           <Form.Control
             type="password"
-            placeholder="Password"
+            placeholder="Enter Password"
             required
             onChange={onPasswordInputChange}
           />

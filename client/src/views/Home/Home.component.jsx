@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Image, Button, Row, Col, Container } from "react-bootstrap";
+import { Button, Row, Col } from "react-bootstrap";
 import "./home.scss";
 import VideoCard from "../../components/VideoCard/VideoCard";
-import GithubCard from "../../components/GithubCard/GithubCard";
 import { connect } from "react-redux";
-import NPMCard from "../../components/NPMCard/NPMCard";
-import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { getProfileData } from "../../components/Sidebar/sidebar.action";
 
@@ -17,7 +14,6 @@ const settings = {
   slidesToScroll: 1,
 };
 const Home = (props) => {
-  const [selectedTopic, setSelectedTopic] = useState("");
   const [userVideoList, setUserVideoList] = useState([]);
 
 

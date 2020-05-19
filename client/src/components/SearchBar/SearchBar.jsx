@@ -1,7 +1,6 @@
 import React, { useState,useEffect } from "react";
-import { BsSearch } from "react-icons/bs";
 
-import { FormControl, Form, InputGroup } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { connect } from "react-redux";
 import { FiSearch } from "react-icons/fi";
 import {searchAction} from '../../components/Sidebar/sidebar.action';

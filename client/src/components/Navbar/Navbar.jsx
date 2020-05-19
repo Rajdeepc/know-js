@@ -1,26 +1,18 @@
 import React, { useState, useEffect } from "react";
 import {
   NavDropdown,
-  FormControl,
-  Form,
   Nav,
-  InputGroup,
   Button,
   Navbar,
-  Modal,
-  DropdownButton,
-  Dropdown,
-  Image
+  Modal
 } from "react-bootstrap";
-import {JSLinks} from "../../utils/constants";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutAction, clearAllErrors } from "../../views/Auth/auth.action";
 import "./navbar.scss";
-import { FaRegUserCircle, FaAlignLeft } from "react-icons/fa";
-import { FiLogIn, FiUser } from "react-icons/fi";
-import { AiOutlineLogin, AiOutlineBell } from "react-icons/ai";
-import { DiJavascript } from "react-icons/di";
+import { FaRegUserCircle } from "react-icons/fa";
+import { FiUser } from "react-icons/fi";
+import {  AiOutlineBell } from "react-icons/ai";
 import AuthConnectedComponent from "../../views/Auth/Auth.component";
 import { jslogo } from '../../assets/images/images';
 import { getProfileData } from "../../components/Sidebar/sidebar.action";

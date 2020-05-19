@@ -7,18 +7,13 @@ import {
     vue,
     angular,
     flutter,
-    ionic,
     mongodb,
     nodejs,
     svelte,
     reactnative,
     ds
 } from '../assets/images/images';
-import { AiOutlineHome } from "react-icons/ai";
-import { FiVideo, FiSettings } from "react-icons/fi";
-import { RiTimerLine } from "react-icons/ri";
-import { DiHackernews } from "react-icons/di";
-import { FaPodcast,FaRegLightbulb,FaUserCheck } from "react-icons/fa";
+import { FiVideo } from "react-icons/fi";
 
 const isLoggedIn = JSON.parse(sessionStorage.getItem('state'))
 console.log(isLoggedIn)

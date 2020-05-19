@@ -27,9 +27,6 @@ const Sidebar = (props) => {
     <div className="sidebar-container">
       <div className="sidebar">
         <ListGroup className="categories">
-          {/* <ListGroup.Item className="category-header">
-            CATEGORIES
-          </ListGroup.Item> */}
           {(JSLinks || []).map((link) => {
             return (
               <Link

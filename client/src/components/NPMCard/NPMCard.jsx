@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Nav, Button } from "react-bootstrap";
+import { Card, Nav } from "react-bootstrap";
 import "./npmcard.scss";
 import moment from 'moment';
 
@@ -7,7 +7,7 @@ const NPMCard = ({ item }) => {
   return (
     <div className="npm-card">
       <Card>
-        <a target="_blank" href={item.package && item.package.links && item.package.links.npm}>
+        <a target="_blank" rel="noopener noreferrer" href={item.package && item.package.links && item.package.links.npm}>
         <Card.Body>
           <h5>{item.package.name}</h5>
           <Card.Text>{item.package.description}</Card.Text>

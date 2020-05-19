@@ -30,10 +30,6 @@ const ResetPasswordForm = (props) => {
     event.stopPropagation();
     if (form.checkValidity() === false) {
     } else {
-      let formObj = {
-        email,
-        newPassword
-      };
       props.updatePasswordAction(email,newPassword);
     }
     setValidated(true);

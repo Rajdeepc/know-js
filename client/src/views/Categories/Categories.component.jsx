@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Image, Button, Row, Col } from "react-bootstrap";
+import React from "react";
+import { Row, Col } from "react-bootstrap";
 import "../Home/home.scss";
 import VideoCard from "../../components/VideoCard/VideoCard";
 import GithubCard from "../../components/GithubCard/GithubCard";
@@ -19,14 +19,7 @@ const settings = {
 };
 
 const Categories = (props) => {
-  /**
-   * get profile data on load
-   */
-  const [selectedTopic, setSelectedTopic] = useState("");
-  const [userVideoList, setUserVideoList] = useState([]);
-
-    console.log(props.filteredGitHubItems)
-
+  
   return (
     <div className="categories-wrapper">
       <div className="section">
@@ -43,8 +36,8 @@ const Categories = (props) => {
                 <Slider {...settings}>
                   {(props.filteredYoutubeItems || []).map((item, index) => {
                     return (
-                      <div class="slick-card-item" key={`index-${index}`}>
-                        <VideoCard item={item} videoData={userVideoList} />
+                      <div className="slick-card-item" key={`index-${index}`}>
+                        <VideoCard item={item} />
                       </div>
                     );
                   })}

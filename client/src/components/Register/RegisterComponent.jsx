@@ -7,7 +7,6 @@ import { AiOutlineMail } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import "./register.scss";
-import { Link } from "react-router-dom";
 const RegisterComponent = (props) => {
   const [validated, setValidated] = useState(false);
   const [email, setEmail] = useState("");
@@ -16,16 +15,8 @@ const RegisterComponent = (props) => {
 
   /** Check for valid scenario */
   useEffect(() => {
-    if (props.registerResponse && props.registerResponse.success) {
+    if (props.registerResponse && (props.registerResponse.success || props.registerResponse.error)) {
       //TODO show toast and redirect user to login
-      clearInputFields();
-    }
-  }, [props.registerResponse]);
-
-  /** check for different error messages */
-
-  useEffect(() => {
-    if (props.registerResponse && props.registerResponse.error) {
       clearInputFields();
     }
   }, [props.registerResponse]);
@@ -73,7 +64,6 @@ const RegisterComponent = (props) => {
           onChange={onEmailInputChange}
         />
         <AiOutlineMail />
-        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         <Form.Control.Feedback type="invalid">
           Please provide a valid email address.
         </Form.Control.Feedback>
@@ -81,12 +71,11 @@ const RegisterComponent = (props) => {
       <Form.Group controlId="formBasicUserName">
         <Form.Control
           type="text"
-          placeholder="Enter UserName"
+          placeholder="Enter Username"
           required
           onChange={onNameInputChange}
         />
         <FiUser />
-        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         <Form.Control.Feedback type="invalid">
           Please provide a valid username.
         </Form.Control.Feedback>
@@ -94,12 +83,11 @@ const RegisterComponent = (props) => {
       <Form.Group controlId="formBasicPassword">
         <Form.Control
           type="password"
-          placeholder="Password"
+          placeholder="Enter Password"
           required
           onChange={onPasswordInputChange}
         />
         <RiLockPasswordLine />
-        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         <Form.Control.Feedback type="invalid">
           Please provide a valid password.
         </Form.Control.Feedback>

@@ -1,16 +1,14 @@
 import React from "react";
-import { Card, Row,Col,ButtonGroup,Modal, Button } from "react-bootstrap";
+import { Row,Col } from "react-bootstrap";
 import moment from "moment";
-import './videoplayer.scss'
-import { RiYoutubeLine } from "react-icons/ri";
-import { BsBookmarks } from "react-icons/bs";
-import { FiSave } from "react-icons/fi";
+import './videoplayer.scss';
 const VideoModalPlayer = ({item}) => {
   return (
     <div className="video-modal-player">
       <iframe
         width="100%"
         height="400"
+        title={item.id}
         allowfullscreen
         src={`https://www.youtube.com/embed/${item.id.videoId}`}
       ></iframe>
@@ -27,18 +25,19 @@ const VideoModalPlayer = ({item}) => {
               <p>{item.snippet.description} </p>
             </Col>
           </Row>
-          <Row>
+          <Row className="channel">
             <Col>
               <div className="channel">
               Channel: <a
                   target="_blank"
+                  rel="noopener noreferrer"
                   href={`https://www.youtube.com/channel/${item.snippet.channelId}`}
                 >
                   {item.snippet.channelTitle}
                 </a>
                 </div>
                 </Col>
-                <Col>
+                <Col className="text-right">
                     Published At: {moment(item.snippet.publishedAt).format("DD/MM/YYYY")}
                 </Col>
           </Row>
