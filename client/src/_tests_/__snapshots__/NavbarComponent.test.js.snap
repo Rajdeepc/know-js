@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Connected Redux <NavbarComponent component> renders NavbarComponent Component 1`] = `
+<nav
+  className="navbar-js navbar navbar-expand-lg navbar-light"
+>
+  <a
+    className="navbar-brand"
+    href="#home"
+  >
+    <span>
+      <span
+        className="navbar-logo"
+      >
+        <img
+          alt=""
+          src="jslogo.png"
+        />
+      </span>
+      <span>
+        For Everyone
+      </span>
+    </span>
+  </a>
+  <button
+    aria-controls="basic-navbar-nav"
+    aria-label="Toggle navigation"
+    className="navbar-toggler collapsed"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    className="search-nav ml-auto navbar-nav"
+    onKeyDown={[Function]}
+  >
+    <form
+      className=""
+      noValidate={true}
+    >
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Search here.."
+        required={true}
+        type="email"
+      />
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="11"
+          cy="11"
+          r="8"
+        />
+        <line
+          x1="21"
+          x2="16.65"
+          y1="21"
+          y2="16.65"
+        />
+      </svg>
+    </form>
+  </div>
+  <div
+    className="ml-auto sign-in navbar-nav"
+    onKeyDown={[Function]}
+  >
+    <button
+      className="btn btn-outline-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        fill="none"
+        height={20}
+        size={20}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+        />
+        <circle
+          cx="12"
+          cy="7"
+          r="4"
+        />
+      </svg>
+      SIGN IN 
+    </button>
+  </div>
+</nav>
+`;

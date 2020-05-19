@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NPMCard component> renders NPMCard Component 1`] = `
+<div
+  class="npm-card"
+  data-testid="test-npmcard-card-wrapper"
+>
+  <div
+    class="card"
+  >
+    <a
+      href=""
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div
+        class="card-body"
+      >
+        <h5 />
+        <p
+          class="card-text"
+        />
+        <div
+          class="npm-tags"
+        />
+        <p>
+          Author:
+           
+          
+        </p>
+        <p>
+          Last Updated:
+           
+          
+        </p>
+      </div>
+    </a>
+  </div>
+</div>
+`;

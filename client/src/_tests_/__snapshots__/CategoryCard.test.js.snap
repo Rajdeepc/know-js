@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Category component> renders Category Component 1`] = `
+<div
+  class="category-card"
+>
+  <div
+    class="panel panel-default"
+  >
+    <div
+      class="panel-body"
+    >
+      <a
+        href="/courses/development/"
+      >
+        <div
+          class="top-category--panel-content"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col"
+            >
+              <div
+                class="top-category--category"
+              >
+                <img
+                  alt="hello"
+                  class=""
+                  src=""
+                />
+              </div>
+            </div>
+            <div
+              class="col"
+            >
+              <div
+                class="top-category--category"
+              >
+                hello
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;

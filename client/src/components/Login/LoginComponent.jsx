@@ -9,7 +9,7 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { MdArrowBack } from "react-icons/md";
 import "../../views/Auth/auth.scss";
 import ResetPasswordForm from "../ResetPasswordForm/ResetPasswordForm";
-
+import PropTypes from 'prop-types';
 
 
 const LoginComponent = (props) => {
@@ -23,14 +23,6 @@ const LoginComponent = (props) => {
     props.clearUserStatus();
     setShow(true);
   };
-
-  // useEffect(() => {
-  //   if (!props.loginResponse.isUserExists) {
-  //     setShow(true);
-  //   }
-  // }, [props.loginResponse.isUserExists]);
-
-  /** check for different error messages */
 
   useEffect(() => {
     if (props.loginResponse && props.loginResponse.error) {
@@ -68,7 +60,7 @@ const LoginComponent = (props) => {
 
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleSubmit}>
+      <Form noValidate validated={validated} data-testid="login-form-validation-wrapper" onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
           <Form.Control
             type="email"
@@ -135,5 +127,15 @@ const LoginConnectedComponent = connect(mapStateToProps, {
   loginAction,
   clearUserStatus,
 })(LoginComponent);
+
+
+LoginComponent.defaultProps = {
+  loginResponse: {}
+}
+
+LoginComponent.propTypes = {
+  loginResponse: PropTypes.objectOf
+}
+
 
 export default LoginConnectedComponent;
