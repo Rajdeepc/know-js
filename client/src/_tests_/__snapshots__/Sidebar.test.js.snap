@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Connected Redux <SideBarComponent component> renders SideBarComponent Component 1`] = `
+<div
+  className="sidebar-container"
+>
+  <div
+    className="sidebar"
+  >
+    <div
+      className="categories list-group"
+      onKeyDown={[Function]}
+    >
+      <a
+        className="list-group-item active"
+        href="/datastructure"
+        onClick={[Function]}
+      >
+        <span
+          className="img-category"
+        >
+          <img
+            alt="Data Structures"
+            src="datastr.png"
+          />
+           
+        </span>
+        <span>
+          Data Structures
+        </span>
+      </a>
+      <a
+        className="list-group-item"
+        href="/javascript"
+        onClick={[Function]}
+      >
+        <span
+          className="img-category"
+        >
+          <img
+            alt="JavaScript"
+            src="javascript.png"
+          />
+           
+        </span>
+        <span>
+          JavaScript
+        </span>
+      </a>
+      <a
+        className="list-group-item"
+        href="/react"
+        onClick={[Function]}
+      >
+        <span
+          className="img-category"
+        >
+          <img
+            alt="React"
+            src="react.png"
+          />
+           
+        </span>
+        <span>
+          React
+        </span>
+      </a>
+      <a
+        className="list-group-item"
+        href="/redux"
+        onClick={[Function]}
+      >
+        <span
+          className="img-category"
+        >
+          <img
+            alt="Redux"
+            src="redux.png"
+          />
+           
+        </span>
+        <span>
+          Redux
+        </span>
+      </a>
+      <a
+        className="list-group-item"
+        href="/vue"
+        onClick={[Function]}
+      >
+        <span
+          className="img-category"
+        >
+          <img
+            alt="Vue"
+            src="vuejs.png"
+          />
+           
+        </span>
+        <span>
+          Vue
+        </span>
+      </a>
+      <a
+        className="list-group-item"
+        href="/svelte"
+        onClick={[Function]}
+      >
+        <span
+          className="img-category"
+        >
+          <img
+            alt="Svelte"
+            src={
+              Object {
+                "ReactComponent": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "render": [Function],
+                },
+                "__esModule": true,
+                "default": "svelte.svg",
+              }
+            }
+          />
+           
+        </span>
+        <span>
+          Svelte
+        </span>
+      </a>
+      <a
+        className="list-group-item"
+        href="/angular"
+        onClick={[Function]}
+      >
+        <span
+          className="img-category"
+        >
+          <img
+            alt="Angular"
+            src="angular.png"
+          />
+           
+        </span>
+        <span>
+          Angular
+        </span>
+      </a>
+      <a
+        className="list-group-item"
+        href="/reactnative"
+        onClick={[Function]}
+      >
+        <span
+          className="img-category"
+        >
+          <img
+            alt="React Native"
+            src={
+              Object {
+                "ReactComponent": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "render": [Function],
+                },
+                "__esModule": true,
+                "default": "reactnative.svg",
+              }
+            }
+          />
+           
+        </span>
+        <span>
+          React Native
+        </span>
+      </a>
+      <a
+        className="list-group-item"
+        href="/flutter"
+        onClick={[Function]}
+      >
+        <span
+          className="img-category"
+        >
+          <img
+            alt="Flutter"
+            src="flutter.png"
+          />
+           
+        </span>
+        <span>
+          Flutter
+        </span>
+      </a>
+      <a
+        className="list-group-item"
+        href="/mongodb"
+        onClick={[Function]}
+      >
+        <span
+          className="img-category"
+        >
+          <img
+            alt="MongoDB"
+            src={
+              Object {
+                "ReactComponent": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "render": [Function],
+                },
+                "__esModule": true,
+                "default": "mongodb.svg",
+              }
+            }
+          />
+           
+        </span>
+        <span>
+          MongoDB
+        </span>
+      </a>
+      <a
+        className="list-group-item"
+        href="/nodejs"
+        onClick={[Function]}
+      >
+        <span
+          className="img-category"
+        >
+          <img
+            alt="Node"
+            src={
+              Object {
+                "ReactComponent": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "render": [Function],
+                },
+                "__esModule": true,
+                "default": "nodejs.svg",
+              }
+            }
+          />
+           
+        </span>
+        <span>
+          Node
+        </span>
+      </a>
+    </div>
+    <div
+      className="my-videos list-group"
+      onKeyDown={[Function]}
+    />
+  </div>
+</div>
+`;

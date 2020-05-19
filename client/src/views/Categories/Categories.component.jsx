@@ -5,7 +5,7 @@ import VideoCard from "../../components/VideoCard/VideoCard";
 import GithubCard from "../../components/GithubCard/GithubCard";
 import { connect } from "react-redux";
 import Slider from "react-slick";
-import { getSelectionData } from "../../components/Sidebar/sidebar.action";
+import { getSelectionData } from "./category.action";
 import './categories.scss';
 import {FaYoutube} from 'react-icons/fa'
 import {GoRepo} from 'react-icons/go'

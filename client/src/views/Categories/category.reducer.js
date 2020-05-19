@@ -6,7 +6,7 @@ import { GET_GITHUB_DATA_SUCCESS,
   PROFILE_DATA_FAILED,
   SEARCH_TEXT
 } 
-from './sidebar.action.types'; 
+from './category.action.types'; 
 
 const INITIAL_STATE = {
   isGithubApiSuccess: false,

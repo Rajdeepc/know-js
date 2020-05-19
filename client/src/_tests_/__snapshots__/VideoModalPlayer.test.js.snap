@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VideoModalPlayer component> renders VideoModalPlayer Component 1`] = `
+<div
+  class="video-modal-player"
+  data-testid="test-videplayer-card-wrapper"
+>
+  <iframe
+    height="400"
+    src="https://www.youtube.com/embed/"
+    title=""
+    width="100%"
+  />
+  <div
+    class="video-info"
+  >
+    <div
+      class="video-title"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-sm-12"
+        >
+          <h4 />
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="col"
+        >
+          <p>
+            
+             
+          </p>
+        </div>
+      </div>
+      <div
+        class="channel row"
+      >
+        <div
+          class="col"
+        >
+          <div
+            class="channel"
+          >
+            Channel: 
+            <a
+              href="https://www.youtube.com/channel/"
+              rel="noopener noreferrer"
+              target="_blank"
+            />
+          </div>
+        </div>
+        <div
+          class="text-right col"
+        >
+          Published At: 
+          Invalid date
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

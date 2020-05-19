@@ -3,7 +3,7 @@ import React, { useState,useEffect } from "react";
 import { Form } from "react-bootstrap";
 import { connect } from "react-redux";
 import { FiSearch } from "react-icons/fi";
-import {searchAction} from '../../components/Sidebar/sidebar.action';
+import {searchAction} from '../../views/Categories/category.action';
 import { useDebounce } from "use-debounce";
 
 

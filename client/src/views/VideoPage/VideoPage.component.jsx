@@ -2,7 +2,7 @@ import React,{useEffect} from "react";
 import { Row, Col } from "react-bootstrap";
 import VideoCard from "../../components/VideoCard/VideoCard";
 import { connect } from "react-redux";
-import { getProfileData } from "../../components/Sidebar/sidebar.action";
+import { getProfileData } from "../Categories/category.action";
 
 
 const VideoPage = (props) => {

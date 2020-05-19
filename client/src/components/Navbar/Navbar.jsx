@@ -15,7 +15,7 @@ import { FiUser } from "react-icons/fi";
 import {  AiOutlineBell } from "react-icons/ai";
 import AuthConnectedComponent from "../../views/Auth/Auth.component";
 import { jslogo } from '../../assets/images/images';
-import { getProfileData } from "../../components/Sidebar/sidebar.action";
+import { getProfileData } from "../../views/Categories/category.action";
 import SearchBar from '../SearchBar/SearchBar';
 
 const NavbarComponent = (props) => {

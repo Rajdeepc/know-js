@@ -3,7 +3,7 @@ import "./sidebar.scss";
 import { ListGroup } from "react-bootstrap";
 import { JSLinks, SidebarLinks } from "../../utils/constants";
 import { Link } from "react-router-dom";
-import { getSelectionData, getProfileData } from "./sidebar.action";
+import { getSelectionData, getProfileData } from "../../views/Categories/category.action";
 import { connect } from "react-redux";
 
 const Sidebar = (props) => {

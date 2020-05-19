@@ -2,13 +2,16 @@ import React from "react";
 import { Row,Col } from "react-bootstrap";
 import moment from "moment";
 import './videoplayer.scss';
+import PropTypes from 'prop-types';
+
+
 const VideoModalPlayer = ({item}) => {
   return (
-    <div className="video-modal-player">
+    <div className="video-modal-player" data-testid="test-videplayer-card-wrapper">
       <iframe
         width="100%"
         height="400"
-        title={item.id}
+        title={item.id.videoId}
         allowfullscreen
         src={`https://www.youtube.com/embed/${item.id.videoId}`}
       ></iframe>
@@ -46,5 +49,31 @@ const VideoModalPlayer = ({item}) => {
     </div>
   );
 };
+
+VideoModalPlayer.defaultProps = {
+  id: {
+    videoId: ''
+  },
+  snippet: {
+    title: '',
+    description:'',
+    channelId:"",
+    channelTitle:'',
+    publishedAt:''
+  }
+}
+
+VideoModalPlayer.propTypes = {
+  id: PropTypes.objectOf(PropTypes.shape({
+    videoId: PropTypes.string
+  })),
+  snippet: PropTypes.objectOf(PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string,
+    channelId: PropTypes.string,
+    channelTitle: PropTypes.string,
+    publishedAt: PropTypes.string
+  })),
+}
 
 export default VideoModalPlayer;

@@ -7,7 +7,7 @@ import VideoModalPlayer from "../VideoCardModalPlayer/VideoModalPlayer";
 import { saveVideoItemAction } from "../../views/VideoPage/video.action";
 import { connect } from "react-redux";
 import { IconContext } from "react-icons";
-
+import PropTypes from 'prop-types'
 const VideoCard = (props) => {
   const { item } = props;
   const [show, setShow] = useState(false);
@@ -84,6 +84,37 @@ const VideoCard = (props) => {
   );
 };
 
+
+VideoCard.defaultProps = {
+  item:{
+    snippet: {
+      title : '',
+      thumbnails: {
+        high:{
+          url :''
+        }
+      }
+    }
+  },
+  videoData:[],
+
+}
+
+VideoCard.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape({
+    snippet:PropTypes.objectOf(PropTypes.shape({
+      title: PropTypes.string,
+      thumbnails: PropTypes.objectOf(PropTypes.shape({
+        high: PropTypes.objectOf(PropTypes.shape({
+          url: PropTypes.string
+        }))
+      }))
+    }))
+  })),
+  videoData: PropTypes.arrayOf,
+
+}
+
 const mapStateToProps = (state) => ({
   loginReducer: state.AuthReducer,
   videoSaveResponse: state.VideoPageReducer,
@@ -92,5 +123,8 @@ const mapStateToProps = (state) => ({
 const VideoPageComponent = connect(mapStateToProps, {
   saveVideoItemAction,
 })(VideoCard);
+
+
+
 
 export default VideoPageComponent;
