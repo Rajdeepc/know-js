@@ -18,7 +18,7 @@ import {
  * @param {*} loginObj
  */
 const loginAction = (loginObj) => (dispatch) => {
-  Service.loginUser(loginObj)
+  return Service.loginUser(loginObj)
     .then((response) => {
       dispatch({
         type: USER_LOGIN_SUCCESS,
@@ -49,7 +49,7 @@ const logoutAction = () => (dispatch) => {
  */
 
 const registerUserAction = (formObj) => (dispatch) => {
-  Service.registerUser(formObj)
+  return Service.registerUser(formObj)
     .then((response) => {
       dispatch({
         type: USER_REGISTERED_SUCCESS,
@@ -76,7 +76,7 @@ const clearAllErrors = () => (dispatch) => {
  * @param {*} email
  */
 const validateUserEmailAction = (email) => (dispatch) => {
-  Service.validateUserEmail(email)
+  return Service.validateUserEmail(email)
     .then((response) => {
       dispatch({
         type: GET_USER_EXISTS_SUCCESS,
@@ -97,7 +97,7 @@ const validateUserEmailAction = (email) => (dispatch) => {
  * @param {*} newPassword
  */
 const updatePasswordAction = (email, newPassword) => (dispatch) => {
-  Service.updateUserPassword(email, newPassword)
+  return Service.updateUserPassword(email, newPassword)
     .then((response) => {
       dispatch({
         type: UPDATE_USER_PASSWORD_SUCCESS,

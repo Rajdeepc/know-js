@@ -61,7 +61,7 @@ const getProfileData = (email) => async dispatch => {
 }
 
 const searchAction = (value) => dispatch => {
-    dispatch({
+     dispatch({
         type: SEARCH_TEXT,
         text: value
     })
