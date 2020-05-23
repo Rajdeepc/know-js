@@ -20,14 +20,12 @@ const VideoCard = (props) => {
   };
 
   const saveItem = (item, event) => {
-    console.log(item);
     props.saveVideoItemAction(
       item,
       props.loginReducer.loginResponse.email
     );
   };
 
-  // console.log(item);
   return (
     <>
       <Card className="video-card">
@@ -111,7 +109,7 @@ VideoCard.propTypes = {
       }))
     }))
   })),
-  videoData: PropTypes.arrayOf,
+  videoData: PropTypes.array,
 
 }
 

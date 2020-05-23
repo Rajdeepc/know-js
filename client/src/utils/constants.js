@@ -16,7 +16,6 @@ import {
 import { FiVideo } from "react-icons/fi";
 
 const isLoggedIn = JSON.parse(sessionStorage.getItem('state'))
-console.log(isLoggedIn)
 
 const JSLinks = [
     {

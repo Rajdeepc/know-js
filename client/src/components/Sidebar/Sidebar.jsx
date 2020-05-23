@@ -17,7 +17,6 @@ const Sidebar = (props) => {
 
   useEffect(() => {
     if (categorylinkValue) {
-      console.log(categorylinkValue);
       localStorage.setItem("selected", JSON.stringify(categorylinkValue));
       props.getSelectionData(categorylinkValue);
     }

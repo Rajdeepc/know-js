@@ -8,7 +8,6 @@ router.post('/', async (req,res) => {
 
 // validating the request
 const error = validate(req.body);
-console.log("Error" + error)
 if(error) {
     return res.status(400).send({error: error});
 } 

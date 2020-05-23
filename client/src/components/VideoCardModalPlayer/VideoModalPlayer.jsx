@@ -55,11 +55,11 @@ VideoModalPlayer.defaultProps = {
     videoId: ''
   },
   snippet: {
-    title: '',
-    description:'',
-    channelId:"",
-    channelTitle:'',
-    publishedAt:''
+    title: {},
+    description:{},
+    channelId:{},
+    channelTitle:{},
+    publishedAt:{}
   }
 }
 
@@ -68,11 +68,11 @@ VideoModalPlayer.propTypes = {
     videoId: PropTypes.string
   })),
   snippet: PropTypes.objectOf(PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    channelId: PropTypes.string,
-    channelTitle: PropTypes.string,
-    publishedAt: PropTypes.string
+    title: PropTypes.object,
+    description: PropTypes.object,
+    channelId: PropTypes.object,
+    channelTitle: PropTypes.object,
+    publishedAt: PropTypes.object
   })),
 }
 

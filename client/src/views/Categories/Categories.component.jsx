@@ -85,9 +85,6 @@ const mapStateToProps = (state) => {
   const { youtubeApiData = [], githubAPiData = [], searchText } = state.CategoryDataReducer;
   const filteredYoutubeItems = (youtubeApiData || []).filter((item) => item.snippet.title.toLowerCase().includes(searchText.toLowerCase()));
   const filteredGitHubItems = (githubAPiData || []).filter((item) => item.full_name.toLowerCase().includes(searchText.toLowerCase()));
-  console.log("filteredYoutubeItems" + filteredYoutubeItems.length);
-  console.log("filteredGitHubItems" + filteredGitHubItems.length)
-
   return {
       filteredYoutubeItems: filteredYoutubeItems || state.CategoryDataReducer.youtubeApiData,
       filteredGitHubItems: filteredGitHubItems || state.CategoryDataReducer.githubAPiData,

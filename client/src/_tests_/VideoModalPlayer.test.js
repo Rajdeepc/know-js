@@ -41,6 +41,6 @@ describe("<VideoModalPlayer component>", () => {
   //open_issues returns correctly
   test('open_issues returns correctly' , () => {
       const result = VideoModalPlayer.defaultProps.id.videoId;
-      expect(result).toBe("")
+      expect(result).toBe('')
   })
 });
